@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+ 
+  
+</head>
+<body>
+  
+  <nav class="navbar navbar-dark menu" style="margin-top: auto;padding-left: 0%;margin: 0%; background-color: #1e90ff;">
+    <div class="container " style="padding:0%;margin-top: 0%;margin-left: 2%;">
+      <span>
+        <img class="image" src="./assets/images/people.png" />
+      </span>
+     
+      <span class="hd" routerLinkActive="active"  routerLink="/Customer1Component" >Customers Manager</span>
+    
+    <span class="hd" routerLinkActive="active"  routerLink="/CustomersA" >Customers</span>
+   <span class="hd" routerLink="/OrdersAComponent" routerLinkActive="active" >orders</span>
+   <span class="hd" routerLink="/AboutAComponent"  routerLinkActive="active">about</span>
+   <span class="hd" routerLink="/CustomerLogin1Component" routerLinkActive="active">login</span>
+    </div>
+  </nav>
+  
+    
+  
+   
+    
+
+   <div class="searchfilter">
+  
+    <fa-icon class="ficon" [icon]="faUser" style="color:rgb(211, 51, 80);padding:10px;"></fa-icon>
+    <span  class="ics" style="color:rgb(37, 150, 206);">  Customers</span>
+  </div>
+  <!--
+  <nav  class="navbar navbar-expand-md" style="overflow:auto;">
+    <div class="container">
+      
+    <span class="span" #b1  routerLinkActive="active"  routerLink="/CustomersDetails1Component">CustomersDetails</span>
+    <span class="span" #b2  routerLinkActive="active"  routerLink="/CustomersOrders1Component">CustomersOrders</span>
+    <span class="span" #b3  routerLinkActive="active"  routerLink="/EditCustomer1Component" >EditCustomers</span>
+  
+</div>
+  </nav>
+-->
+  <div class="searchfilter1" style="float: right;margin-right: 10px;">
+    <label >filter data-</label>
+    <input  type="text" placeholder="search" [(ngModel)]="search1"  />
+  </div>
+  <div style="display: none;"><app-customers-details1></app-customers-details1></div>
+   <!--<table>
+    <thead>
+      
+        <th>id</th>
+        <th>name</th>
+        <th>abbreviation</th>
+        <th>_id</th>
+
+    </thead>
+    <tbody>
+    <tr  ngApp *ngFor="let order of custom12|filter:search1;">
+      
+        <td>{{order.id}}</td>
+        <td>{{order.name}}</td>
+        <td>{{order.abbreviation}}</td>
+        <td>{{order._id}}</td>
+    </tr>
+    </tbody>
+</table> -->
+</body>
+</html>
+

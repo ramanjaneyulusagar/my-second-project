@@ -1,0 +1,173 @@
+
+<button class="btn btn-success" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" >add new customer</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table mt-3">
+    <thead  >
+        <tr>
+            <th>image</th>
+            <th>firstName</th>
+            <th>lastname</th>
+            <th>address</th>
+            <th>city</th>
+            <th>state(name)</th>
+     
+           
+            <th>ordertotal</th>
+            <th>action</th>
+              <th></th>
+        </tr>
+
+    </thead>
+    <tbody  >
+        <tr ngApp *ngFor="let customer of custom|filter:sear|paginate: { itemsPerPage: 10, currentPage: p }" style="border:2px solid none;" >
+       
+         <td *ngIf="customer.gender==='male'">
+            <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px" style="float: left;padding-right: 10px;" />
+
+        </td>
+        <td *ngIf="customer.gender==='female'"> 
+            <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px" style="float: left;padding-right: 10px" /></td>
+    
+          
+        
+            <td style="cursor: pointer;color: rgb(61, 61, 180);">{{customer.firstName}}</td>
+            <td>{{customer.lastName}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.city}}</td>
+         
+           
+            <td>{{customer.state.name}}</td>  
+    
+          
+           
+           
+            <td>
+                <ul *ngFor="let order of customer.orders">
+                    <li>{{order.itemCost}}</li>
+                </ul>    </td>
+             
+          <td>
+            <button class="btn btn-info">edit </button>
+            <button class="btn btn-danger mx-3">delete</button>
+          </td>
+            </tr>
+    </tbody>
+    </table>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">customer details</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+
+            <form [formGroup]=" formValue">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">id</label>
+                    <input type="text" class="form-control" id="exampleInputId" aria-describedby="emailHelp" formControlName="id">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">firstName</label>
+                    <input type="text" class="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" formControlName="firstName">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">gender</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formContronName="gender" formControlName="gender">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">address</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formContronName="address" formControlName="address" >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">city</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formContronName="city" formControlName="city">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">stateName</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formContronName="stateName" formControlName="stateName">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">stateAbbreviation</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formContronName="stateAbbreviation" formControlName="stateAbbreviation">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">productName</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formContronName="productName" formControlName="productName">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">itemCost</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formContronName="itemCost " formControlName="itemCost">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">latitude</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formContronName="latitude" formControlName="latitude">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">longitude</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formContronName="longitude" formControlName="longitude">
+                  </div>
+
+              </form>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">add</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+<pagination-controls (pageChange)="p = $event" class="float-right" style="float: right;"></pagination-controls>
+</html>
+
+
+
+  
+<!--
+    
+
+  
+  
+ 
+
+    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+    
+-->

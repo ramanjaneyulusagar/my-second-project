@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+     
+       
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-dark menu" style="margin-top: auto;padding-left: 0%;margin: 0%; background-color: #1e90ff;">
+    <div class="container " style="padding:0%;margin-top: 0%;margin-left: 2%;">
+      <span>
+        <img class="image" src="./assets/images/people.png" />
+      </span>
+     
+      <span class="hd" routerLinkActive="active"  routerLink="/Customer1Component" >Customers Manager</span>
+    
+    <span class="hd" routerLinkActive="active"  routerLink="/CustomersA" >Customers</span>
+   <span class="hd" routerLink="/OrdersAComponent" routerLinkActive="active" >orders</span>
+   <span class="hd" routerLink="/AboutAComponent"  routerLinkActive="active">about</span>
+   <span class="hd" routerLink="/CustomerLogin1Component" routerLinkActive="active">login</span>
+    </div>
+  </nav>
+
+  <div class="searchfilter">
+ 
+   <fa-icon class="ficon" [icon]="faUser" style="color:rgb(211, 51, 80);padding:10px;"></fa-icon>
+   <span  class="ics" style="color:rgb(37, 150, 206);">  Customers</span>
+ </div>
+ 
+   
+       
+     
+       <div>
+         <nav >
+        <p class="pbtn">
+        <button class="button1" #b1 style="margin-left: 50px;border: none;background: transparent;font-weight:bold;" (click)="ListView()">ListView</button>
+        <button class="button1" #b2 style="margin-left: 50px;border: none;background: transparent;font-weight:bold;" (click)="CardView()">Card View</button>
+        <button class="button1" #b3 style="margin-left: 50px;border: none;background: transparent;font-weight:bold;" (click)="mapView()">Map View</button>
+        <button class="button1" #b4 style="margin-left: 50px;border: none;background: transparent;font-weight:bold;" (click)="newCustomer()"> New Customer</button>
+        </p>
+        <div #listView style="display: block;"><app-list-view1 ></app-list-view1></div>
+        <div #cardView style="display: none;" ><app-card-view1></app-card-view1></div>
+        <div #mapView1  style="display: none;"><app-map-view></app-map-view></div>
+        <div  #newcustomer  style="display: none;"   ><app-new-customer1></app-new-customer1></div>
+       
+         </nav>
+         
+         
+       </div>
+      </body>
+      </html>
+   <!-- 
+     <label class="button1" style="font-weight:bold;margin-left: 20px;">filter data-</label>
+      <input  type="text" placeholder="search"  [(ngModel)]="sear" style="margin-left: 5px;border:solid 3px black;border-radius: 2rem;" />
+    
+    <table  #table >
+        <thead  >
+                <th>image</th>
+                <th>id</th>
+                <th>city</th>
+                <th>gender</th>
+                <th>firstName</th>
+                <th>lastname</th>
+                <th>address</th>
+                <th>latitude</th>
+                <th>longitude</th>
+                <th>state(ab)</th>
+                <th>state(name)</th>
+                <th>orderproduct </th>
+                <th>item cost</th>
+                  
+        </thead>
+        <tbody  >
+            <tr ngApp *ngFor="let customer of custom|filter:sear;" style="border:2px solid blue;" >
+           
+             <td>
+              <img />
+            </td>
+                <td>{{customer.id}}</td>
+                <td>{{customer.city}}</td>
+                <td>{{customer.gender}}</td>
+                <td>{{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.address}}</td>
+                <td>{{customer.latitude}}</td>
+                <td>{{customer.longitude}}</td>
+                <td>{{customer.state.abbreviation}}</td>
+                <td>{{customer.state.name}}</td>  
+        
+                <td >
+                    <ul >
+                        <li *ngFor="let order of customer.orders;" >{{order.productName}}</li>
+                    </ul>
+                </td>
+               
+               
+                <td>
+                    <ul *ngFor="let order of customer.orders">
+                        <li>{{order.itemCost}}</li>
+                    </ul>    </td>
+    
+               
+                </tr>
+        </tbody>
+        </table>
+        
+    <table style=" width:auto;display: none;">
+        <thead>
+            <th>_id</th>
+            <th>id</th>
+            <th>name</th>
+    
+        </thead>
+        <tr *ngFor="let order of custom1;" style=" width:auto;">
+            <td>{{order._id}}</td>
+            <td>{{order.id}}</td>
+            <td>{{order.name}}</td>
+        </tr>
+    </table>
+    
+    
+    <div  *ngFor="let customer of custom">
+      <button  (click)="view1()">details</button>
+    <div  #hview   class="cardview" style="border: solid 1px black;padding: 5px;margin: 20px;width: 300px;height: 400px;">
+ 
+      
+      <p style="float: left;" >{{customer.firstName}}
+        {{customer.lastName}}
+      </p> 
+      
+  <fa-icon  [icon]="faPenToSquare" style="color:black;float: right;"></fa-icon>
+  <hr/>
+  
+  <p   >
+    
+<b>{{customer.id}}</b><br/>
+<b>{{customer.city}}</b><br/>
+<b>{{customer.gender}}</b><br/>
+<b>{{customer.address}}</b><br/>
+<b>{{customer.latitude}}</b><br/>
+<b>{{customer.longitude}}</b><br/>
+<b>{{customer.state.abbreviation}}</b><br/>
+<b>{{customer.state.name}}</b><br/>
+  </p>
+ <br/>
+    
+    
+    </div></div>
+    
+</body>
+</html> -->

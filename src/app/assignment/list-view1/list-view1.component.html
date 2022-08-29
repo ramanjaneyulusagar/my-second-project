@@ -1,0 +1,64 @@
+
+<style>
+
+td,th{padding: 10px;
+          
+        }
+       
+        table{overflow: auto;}
+        th{background-color:#3d98f3;
+            overflow: auto;
+        }
+        th:hover{background-color: blanchedalmond;}
+
+</style>
+
+<b style="float: right;margin-bottom: 5px;"><label class="button1" style="font-weight:lighter;margin-left: 20px;">filter data-</label>
+ <input  type="text" placeholder="search"  [(ngModel)]="sear" style="margin-left: 5px;border:solid 1px black;border-radius: 2;" />
+</b>
+<table  #table  class="table table-striped ">
+    <thead  >
+        <tr>
+            <th>image</th>
+            <th>firstName</th>
+            <th>lastname</th>
+            <th>address</th>
+            <th>city</th>
+            <th>state(name)</th>
+     
+           
+            <th>ordertotal</th>
+              <th></th>
+        </tr>
+
+    </thead>
+    <tbody  >
+        <tr ngApp *ngFor="let customer of custom|filter:sear|paginate: { itemsPerPage: 10, currentPage: p }" style="border:2px solid none;" >
+       
+         <td *ngIf="customer.gender==='male'">
+            <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px" style="float: left;padding-right: 10px;" />
+
+        </td>
+        <td *ngIf="customer.gender==='female'"> 
+            <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px" style="float: left;padding-right: 10px" /></td>
+    
+          
+        
+            <td style="cursor: pointer;color: rgb(61, 61, 180);">{{customer.firstName}}</td>
+            <td>{{customer.lastName}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.city}}</td>
+         
+            <td>{{customer.state.name}}</td>  
+    
+            <td>
+                <ul *ngFor="let order of customer.orders">
+                    <li>{{order.itemCost}}</li>
+                </ul>    </td>
+                <td (click)="routeToOrderDetails()" style="cursor: pointer;color: rgb(61, 61, 180);">view orders</td>
+          
+            </tr>
+    </tbody>
+   
+    </table>
+    <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;" ></pagination-controls>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- <div class="card" style="width: 18rem;"    *ngFor="let customer of custom">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p style="float: left;" >{{customer.firstName}}
+            {{customer.lastName}}<fa-icon  [icon]="faPenToSquare" style="color:black;float: right;"></fa-icon>
+          </p> 
+        </div>
+        <h1>hello wordl</h1>
+        <div class="card-body">
+          <p   >
+      
+            <b>{{customer.id}}</b><br/>
+            <b>{{customer.city}}</b><br/>
+            <b>{{customer.gender}}</b><br/>
+            <b>{{customer.address}}</b><br/>
+            <b>{{customer.latitude}}</b><br/>
+            <b>{{customer.longitude}}</b><br/>
+            <b>{{customer.state.abbreviation}}</b><br/>
+            <b>{{customer.state.name}}</b><br/>
+              </p>
+        </div>
+      </div>
+    -->
+    <b style="float: right;"><label class="button1" style="font-weight:lighter;margin-left: 20px;">filter data-</label>
+      <input  type="text" placeholder="search"  [(ngModel)]="sear" style="margin-left: 5px;border:solid 1px black;border-radius: 2;" />
+     </b><br/><br/>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="x_panel">
+        <div class="x_content">
+          <div class="row" style="padding-left: 10px;">
+
+
+
+
+
+            <div class="col-md-4 col-sm-4 col-xs-12 profile_details" *ngFor="let customer of custom|paginate: { itemsPerPage: 10, currentPage: p }" style="width: 310px;">
+
+              <div class="box-body"
+                style="background-color:rgb(243, 243, 249);border:solid 2px black;border-radius: 5px;margin: 10px;">
+
+                <div class="col-sm-12"  >
+                 
+                  <h4 style="background-color: #1e90ff;font-family: cursive;font-size: medium;color: white;">
+                    {{customer.firstName}} {{customer.lastName}}
+                    <fa-icon [icon]="faPenToSquare" style="color:black;float: right;"></fa-icon></h4>
+                  
+                  <br />
+                  <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px" style="float: left;padding-right: 10px;" />
+                  <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px" style="float: left;padding-right: 10px" />
+                  <span style="font-family: monospace;">
+                    
+                    
+                    
+                    
+                   <b>{{customer.id}}</b><br />
+                  <b>city:{{customer.city}}</b><br />
+
+                  <b>state:{{customer.state.name}}</b></span><br />
+
+                                 <b >{{customer.gender}}</b><br/>
+                                       
+                                      
+                                         
+                                     
+                    
+                  
+                  
+                     
+                    
+                                  
+
+
+
+                </div>
+
+              </div>
+            </div>
+          
+
+
+
+
+
+
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>        
+  
+
+    <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
+     
+
+</body>
+
+</html>
