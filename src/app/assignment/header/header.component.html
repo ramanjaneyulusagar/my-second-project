@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>span{font-size: 18px;
+        font-weight: bolder;}</style> 
+</head>
+
+    <body style="width:auto">
+ 
+
+        <nav class="navbar navbar-dark menu" style="padding-left: 0%; background-color: #3d99f4;">
+          <div class="container " style="padding:0%;margin-top: 0%;margin-left: 2%;">
+            <span>
+              <img class="image" src="./assets/images/people.png" />
+            </span>
+           
+            <span class="hd" routerLinkActive="active"  routerLink="/Customer1Component" >Customers Manager</span>
+          
+          <span class="hd" routerLinkActive="active"  routerLink="/CustomersA" >Customers</span>
+         <span class="hd" routerLink="/OrdersAComponent" routerLinkActive="active" >Orders</span>
+         <span class="hd" routerLink="/AboutAComponent"  routerLinkActive="active">About</span>
+         <span class="hd" routerLink="/CustomerLogin1Component" routerLinkActive="active">Login</span>
+          </div>
+        </nav>
+      
+        <div class="searchfilter">
+       
+         <fa-icon class="ficon" [icon]="faUser" style="color:rgb(29, 28, 28);padding:10px;"></fa-icon>
+         <span  class="ics" style="color:black"> Customers</span>
+       </div>
+       
+</body>
+</html>
+

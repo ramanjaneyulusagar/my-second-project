@@ -41,8 +41,27 @@ export class ListView1Component implements OnInit {
   sear:string='';
   p: number = 1;
   total: number = 0;
+  
   ngOnInit(): void {
+this.custom;
+this.custom.map((c:any)=>{
+  c['cost']=0
+  if(c?.orders){
+    c.orders.map((o:any)=>{
+      c['cost']=c['cost'] +o.itemCost;
+    })
   }
+
+
+
+
+  })
+
+  }
+
+
+
+  
   routeToOrderDetails(){
 this.route1.navigate(['OrdersAComponent']); 
 

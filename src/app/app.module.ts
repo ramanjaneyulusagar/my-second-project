@@ -30,6 +30,8 @@ import { CustomersDetails1Component } from './assignment/new-customer1/adddetail
 import { CustomersOrders1Component } from './assignment/new-customer1/adddetails/customers-orders1/customers-orders1.component';
 import { EditCustomer1Component } from './assignment/new-customer1/adddetails/edit-customer1/edit-customer1.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Header1Component } from './assignment/header1/header1.component';
+import { HeaderComponent } from './assignment/header/header.component';
 
 
 
@@ -60,6 +62,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CustomersDetails1Component,
     CustomersOrders1Component,
     EditCustomer1Component,
+    Header1Component,
+    HeaderComponent,
     
     
     
@@ -89,8 +93,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
      {path:'CustomersDetails1Component',component:CustomersDetails1Component},
      {path:'CustomersOrders1Component',component:CustomersOrders1Component},
      {path:'EditCustomer1Component',component:EditCustomer1Component},
-      
-
+     {path:'Header1Component ',component:Header1Component },
+     {path:'HeaderComponent ',component:HeaderComponent },
       ]
     ),
        FontAwesomeModule,ReactiveFormsModule,FormsModule,RouterModule, BrowserAnimationsModule,

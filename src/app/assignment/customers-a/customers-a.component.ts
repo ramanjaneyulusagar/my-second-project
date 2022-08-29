@@ -70,16 +70,16 @@ export class CustomersAComponent implements OnInit {
   @ViewChild('mapView1',{static:false}) mapView1:any;
   @ViewChild('newcustomer',{static:false}) newcustomer:any;
   i:any;
-
+/*
   ListView(){
     
     //this.s.navigate(['ListView1Component'])
     this.cardView.nativeElement.style.display="none";
-    this.mapView1.nativeElement.style.display="none";
-    this.newcustomer.nativeElement.style.display="none";
+      this.mapView1.nativeElement.style.display="none";
+      this.newcustomer.nativeElement.style.display="none";
     if( this.listView.nativeElement.style.display==="block"){
       this.listView.nativeElement.style.display="none";
-      
+    
      }
      else {
        this.listView.nativeElement.style.display="block";
@@ -104,7 +104,7 @@ export class CustomersAComponent implements OnInit {
   mapView(){
     
     //this.s.navigate(['MapViewComponent'])
-    this.listView.nativeElement.style.display="none";
+   this.listView.nativeElement.style.display="none";
     this.cardView.nativeElement.style.display="none";
     this.newcustomer.nativeElement.style.display="none";
     if( this.mapView1.nativeElement.style.display==="block"){
@@ -130,6 +130,7 @@ export class CustomersAComponent implements OnInit {
        this.newcustomer.nativeElement.style.display="block";
      }
   }
+  */
 }
   //customerdetails:customer1[]=[];
 //allcustomerdetails:customer1[]=[];
