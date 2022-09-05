@@ -9,8 +9,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Assignment1Component } from './assignment1/assignment1.component';
 import { Customer1Component } from './customer/customer1/customer1.component';
 import { FormBuilder } from '@angular/forms';
-
-import { RouterModule } from '@angular/router';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
+import { RouterModule,Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerLogin1Component } from './customer-login1/customer-login1.component';
@@ -32,6 +33,8 @@ import { EditCustomer1Component } from './assignment/new-customer1/adddetails/ed
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Header1Component } from './assignment/header1/header1.component';
 import { HeaderComponent } from './assignment/header/header.component';
+import { ParentComponent } from './parent/child/parent/parent.component';
+import { ChildComponent } from './parent/child/child/child.component';
 
 
 
@@ -64,6 +67,8 @@ import { HeaderComponent } from './assignment/header/header.component';
     EditCustomer1Component,
     Header1Component,
     HeaderComponent,
+    ParentComponent,
+    ChildComponent,
     
     
     
@@ -73,18 +78,18 @@ import { HeaderComponent } from './assignment/header/header.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule,HttpClientModule,NgxPaginationModule,
+    NgbModule,HttpClientModule,NgxPaginationModule,GoogleMapsModule ,
     
-  
+     
     RouterModule.forRoot(
 
       [
-     {path:"Customer1Component",component:Customer1Component},
+     {path:"Customer1Component",component:Customer1Component,},
      {path:'Assignment1Component',component:Assignment1Component},
      {path:'CustomerLogin1Component',component:CustomerLogin1Component},
      {path:'CustomersA',component:CustomersAComponent},
      {path:'EmployeedataComponent',component:EmployeedataComponent},
-    { path:'ListView1Component',component:ListView1Component},
+     {path:'ListView1Component',component:ListView1Component, },
      {path:'CardView1Component',component:CardView1Component},
      {path:'MapViewComponent',component:MapViewComponent},
      {path:'OrdersAComponent',component:OrdersAComponent},
@@ -93,8 +98,10 @@ import { HeaderComponent } from './assignment/header/header.component';
      {path:'CustomersDetails1Component',component:CustomersDetails1Component},
      {path:'CustomersOrders1Component',component:CustomersOrders1Component},
      {path:'EditCustomer1Component',component:EditCustomer1Component},
-     {path:'Header1Component ',component:Header1Component },
+     {path:'Header1Component ',component:Header1Component, },
      {path:'HeaderComponent ',component:HeaderComponent },
+     {path:'ParentComponent',component:ParentComponent,children:[{path:'ChildComponent',component:ChildComponent}] },
+     {path:'ChildComponent',component:ChildComponent},
       ]
     ),
        FontAwesomeModule,ReactiveFormsModule,FormsModule,RouterModule, BrowserAnimationsModule,

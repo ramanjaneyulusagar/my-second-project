@@ -1,3 +1,4 @@
+
 <app-header1></app-header1>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,54 +36,60 @@
         </div>
       </div>
     -->
-    <b style="float: right;"><label class="button1" style="font-weight:lighter;margin-left: 20px;">filter data-</label>
-      <input  type="text" placeholder="search"  [(ngModel)]="sear" style="margin-left: 5px;border:solid 1px black;border-radius: 2;" />
-     </b><br/><br/>
-  <div class="row" >
+  <b style="float: right;">
+    <label class="button1" style="font-weight:lighter;margin-right: 0px;">Filter </label>
+    <input type="text" placeholder="search" [(ngModel)]="sear"
+      style="margin-left: 5px;border:solid 1px black;border-radius:2px;margin-right: 25px;" />
+  </b><br /><br />
+  <div class="row" style="margin-left:25px;">
     <div class="col-md-12">
       <div class="x_panel">
         <div class="x_content">
-          <div class="row" style="padding-left: 10px;">
+          <div class="row">
 
 
 
 
 
-            <div class="col-md-4 col-sm-4 col-xs-12 profile_details" *ngFor="let customer of custom|paginate: { itemsPerPage: 10, currentPage: p }|filter:sear;" style="width: 310px;">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile_details"
+              *ngFor="let customer of custom|paginate: { itemsPerPage: 10, currentPage: p }|filter:sear;"
+              style="width: 310px;">
 
-              <div class="box-body"
-                style="border:solid 1px #131414;margin: 10px;">
+              <div class="box-body" style="border:solid 1px #131414;margin: 10px;">
 
-                <div class="col-sm-12" >
-                 
+                <div class="col-sm-12">
+
                   <h4 style="background-color:cornflowerblue;font-size: medium;color: white;">
                     {{customer.firstName}} {{customer.lastName}}
-                    <fa-icon [icon]="faPenToSquare" style="color:white;float: right;"></fa-icon></h4>
-                  
+                    <fa-icon [icon]="faPenToSquare" style="color:white;float: right;"></fa-icon>
+                  </h4>
+
                   <br />
-                  <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px" style="float: left;padding-right: 10px;" />
-                  <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px" style="float: left;padding-right: 10px" />
-                  <span >
-                    
-                    
-                    
-                    
-                   <b>{{customer.id}}</b><br />
-                  <b>city:{{customer.city}}</b><br />
+                  <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px"
+                    style="float: left;padding-right: 10px;" />
+                  <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px"
+                    style="float: left;padding-right: 10px" />
+                  <span>
 
-                  <b>state:{{customer.state.name}}</b></span><br />
 
-                   <b >{{customer.gender}}</b><br/>
-                                       
-                                      
-                                         
-                                     
-                    
-                  
-                  
-                     
-                    
-                                  
+
+
+                    <b>{{customer.id}}</b><br />
+                    <b>city:{{customer.city}}</b><br />
+
+                    <b>state:{{customer.state.name}}</b></span><br />
+
+                  <b>{{customer.gender}}</b><br />
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -90,7 +97,7 @@
 
               </div>
             </div>
-          
+
 
 
 
@@ -98,15 +105,15 @@
 
 
           </div>
-        
+
         </div>
       </div>
     </div>
-  </div>        
-  
+  </div>
 
-    <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
-     
+
+  <pagination-controls (pageChange)="p=($event)" class="float-right" style="float: left;"></pagination-controls>
+
 
 </body>
 

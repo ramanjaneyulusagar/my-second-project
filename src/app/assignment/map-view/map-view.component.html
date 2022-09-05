@@ -1,2 +1,32 @@
 <app-header1></app-header1>
 <p>map-view works!</p>
+<input   class="my-map-searchfield" type="text" #searchField    />
+<div style="float: right;">
+    <google-map 
+    height="400px"
+    width="700px"
+    [center]="center"
+  [zoom]="zoom"
+  style="float: right; margin-right: 100px;"
+  (mapClick)="moveMap($event)"
+  (mapMousemove)="move($event)"
+  (mapClick)="addMarker($event)">
+ <map-marker *ngFor="let markerPosition of markerPositions" 
+ [position]="markerPosition"
+ [options]="markerOptions"
+ >
+
+ </map-marker>
+  
+  
+  </google-map>
+  <div>
+    <div>latitude:-{{display.lat}}</div>
+    <div>ltngitude:-{{display.lng}}</div>
+  </div>
+</div>
+ 
+<!--
+
+    key2=AIzaSyAHgP2ccs7f-2512CQsd8uc-Uv2UXmHh3g
+-->

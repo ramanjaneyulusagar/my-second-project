@@ -10,7 +10,7 @@ export class FilterPipe implements PipeTransform {
     if(!f) return value
     f=f.toLowerCase();
     debugger;
-    return value.filter(function(item)
+    return value.filter(function(item:any)
     {
       return JSON.stringify(item)
       .toLowerCase()

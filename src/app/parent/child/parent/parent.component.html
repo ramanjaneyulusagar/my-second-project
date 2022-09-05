@@ -1,0 +1,15 @@
+
+
+
+    
+    <p>passing data from parent to child</p>
+<input  #input1 type="text"   />
+<input     type="button"  (click)="data(input1.value)" value="add" (click)="function1(input1.value)" />
+<h1 style="background-color: aquamarine;">@output:{{title}}</h1>
+    
+    
+<a routerLink="/ChildComponent">og</a>
+  <!--  <app-child    [childdata]="input1.value"    (dataevent)="update($event)">   </app-child>  -->
+
+<router-outlet></router-outlet>
+

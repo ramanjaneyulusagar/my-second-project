@@ -1,23 +1,22 @@
 <app-header1></app-header1>
 <style>
+    th {
+        background-color: #f6f8fa;
+        overflow: auto;
+    }
 
-td,th{padding: 10px;
-          
-        }
-       
-        table{overflow: auto;}
-        th{background-color:#f6f8fa;
-            overflow: auto;
-        }
-        th:hover{background-color: blanchedalmond;}
-
+    th:hover {
+        background-color: blanchedalmond;
+    }
 </style>
 
-<b style="float: right;margin-bottom: 5px;"><label class="button1" style="font-weight:lighter;margin-left: 20px;">Filter :</label>
- <input  type="text" placeholder="search"  [(ngModel)]="sear" style="margin-left: 5px;border:solid 1px black;border-radius: 2;" />
+<b style="float: right;margin-bottom: 5px;"><label class="button1" style="font-weight:lighter;margin-left: 20px;">Filter
+        :</label>
+    <input type="text" placeholder="search" [(ngModel)]="sear"
+        style="margin-left: 5px;border:solid 1px black;border-radius: 2;" />
 </b>
-<table  #table  class="table table-striped ">
-    <thead  >
+<table #table class="table table-striped" style="margin-left :40px ;">
+    <thead>
         <tr>
             <th>Image</th>
             <th>FirstName</th>
@@ -25,38 +24,45 @@ td,th{padding: 10px;
             <th>Address</th>
             <th>City</th>
             <th>State(name)</th>
-     
-           
+
+
             <th>TotalCost</th>
-              <th></th>
+            <th></th>
         </tr>
 
     </thead>
-    <tbody style="font-size: 15px;" >
-        <tr ngApp *ngFor="let customer of custom|filter:sear|paginate: { itemsPerPage: 10, currentPage: p }" style="border:2px solid none;" >
-       
-         <td *ngIf="customer.gender==='male'">
-            <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px" style="float: left;padding-right: 10px;" />
+    <tbody style="font-size: 15px;">
+        <tr ngApp *ngFor="let customer of custom|filter:sear|paginate: { itemsPerPage: 10, currentPage: p }"
+            style="border:2px solid none;">
 
-        </td>
-        <td *ngIf="customer.gender==='female'"> 
-            <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px" style="float: left;padding-right: 10px" /></td>
-    
-          
-        
+            <td *ngIf="customer.gender==='male'">
+                <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="60px"
+                    style="float: left;padding-right: 10px;" />
+
+            </td>
+            <td *ngIf="customer.gender==='female'">
+                <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="60px"
+                    style="float: left;padding-right: 10px" />
+            </td>
+
+
+
             <td style="cursor: pointer;color: rgb(61, 61, 180);">{{customer.firstName}}</td>
             <td>{{customer.lastName}}</td>
             <td>{{customer.address}}</td>
             <td>{{customer.city}}</td>
-         
-            <td>{{customer.state.name}}</td>  
-    
-            <td>{{customer.cost}}
-                    </td>
-                <td (click)="routeToOrderDetails()" style="cursor: pointer;color: rgb(61, 61, 180);">view orders</td>
-          
-            </tr>
+
+            <td>{{customer.state.name}}</td>
+
+            <td>{{customer.cost|number}}
+            </td>
+            <td>{{customer.state.abbreviation}}</td>
+            <td (click)="routeToOrderDetails(customer)" style="cursor: pointer;color: rgb(61, 61, 180);">view orders
+            </td>
+
+        </tr>
     </tbody>
-   
-    </table>
-    <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;" ></pagination-controls>
+
+</table>
+
+<pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>

@@ -1,6 +1,5 @@
 {
   "name": "my-first-project",
-  
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,8 +7,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
-    
-   
   },
   "private": true,
   "dependencies": {
@@ -19,6 +16,7 @@
     "@angular/compiler": "^14.1.0",
     "@angular/core": "^14.1.0",
     "@angular/forms": "^14.1.0",
+    "@angular/google-maps": "^14.2.0",
     "@angular/localize": "^14.1.0",
     "@angular/material": "^14.1.3",
     "@angular/platform-browser": "^14.1.0",

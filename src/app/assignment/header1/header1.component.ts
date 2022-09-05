@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import data from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/customers.json';
 import data1 from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/states.json';
-import { faFilm,faPeopleGroup,faUser,faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faFilm,faPeopleGroup,faUser,faPenToSquare ,faMapLocationDot,faList,faIdCard,faPlus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header1',
@@ -19,6 +19,7 @@ export class Header1Component implements OnInit {
   faPenToSquare=faPenToSquare;
   faPeopleGroup=faPeopleGroup;
   faUser=faUser;
+  faList=faList;faIdCard=faIdCard;faMapLocationDot=faMapLocationDot;faPlus=faPlus;
    f:string='';
     sear:string='';
   constructor(private s:Router) { }

@@ -1,50 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>span{font-size: 18px;
-        font-weight: bolder;}</style> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      font-size: 18px;
+      font-weight: bolder;
+    }
+
+    .active {
+      color: #000000;
+    }
+  </style>
 </head>
 
-    <body style="width:auto">
- 
+<body style="width:auto;">
 
-        <nav class="navbar navbar-dark menu" style="padding-left: 0%; background-color: #3d99f4;">
-          <div class="container " style="padding:0%;margin-top: 0%;margin-left: 2%;">
-            <span>
-              <img class="image" src="./assets/images/people.png" />
-            </span>
-           
-            <span class="hd" routerLinkActive="active"  routerLink="/Customer1Component" >Customers Manager</span>
-          
-          <span class="hd" routerLinkActive="active"  routerLink="/CustomersA" >Customers</span>
-         <span class="hd" routerLink="/OrdersAComponent" routerLinkActive="active" >Orders</span>
-         <span class="hd" routerLink="/AboutAComponent"  routerLinkActive="active">About</span>
-         <span class="hd" routerLink="/CustomerLogin1Component" routerLinkActive="active">Login</span>
-          </div>
-        </nav>
-      
-        <div class="searchfilter">
-       
-         <fa-icon class="ficon" [icon]="faUser" style="color:rgb(29, 28, 28);padding:10px;"></fa-icon>
-         <span  class="ics" style="color:black"> Customers</span>
-       </div>
-       
-         
-             
-           
-             <div>
-               <nav style="margin-top: 10px;">
-              <p class="pbtn">
-              <button class="button1" #b1 style="margin-left: 50px;border: none;background: transparent;font-weight:bold;"  routerLinkActive="active"  routerLink="/ListView1Component">ListView</button>
-              <button class="button1" #b2 style="margin-left: 50px;border: none;background: transparent;font-weight:bold;"  routerLinkActive="active" routerLink="/CardView1Component">Card View</button>
-              <button class="button1" #b3 style="margin-left: 50px;border: none;background: transparent;font-weight:bold;"  routerLinkActive="active" routerLink="/MapViewComponent">Map View</button>
-              <button class="button1" #b4 style="margin-left: 50px;border: none;background: transparent;font-weight:bold;"  routerLinkActive="active" routerLink="/NewCustomer1Component"> New Customer</button>
-              </p>
-              </nav>
-              </div>
+
+  <nav class="navbar navbar-dark menu" style="padding-left: 0%; background-color: #3592ef;display: flex;">
+    <div class="container " style="padding:0%;margin-top: 0%;margin-left: 50px;">
+      <span>
+        <img class="image" src="./assets/images/people.png" />
+      </span>
+
+      <span class="hd" routerLinkActive="active" routerLink="/Customer1Component">Customers Manager</span>
+
+      <span class="hd" routerLinkActive="active" routerLink="/ListView1Component">Customers</span>
+      <span class="hd" routerLink="/CustomersDetails1Component" routerLinkActive="active">Orders</span>
+      <span class="hd" routerLink="/AboutAComponent" routerLinkActive="active">About</span>
+      <span class="hd" routerLink="/CustomerLogin1Component" routerLinkActive="active">Login</span>
+    </div>
+  </nav>
+
+  <div style="margin-left: 45px;">
+
+    <fa-icon class="ficon" [icon]="faUser" style="color:#1d1c1c;"></fa-icon>
+    <span class="ics" style="color:black"> Customers</span>
+  </div>
+
+
+
+
+  <div>
+    <nav style="margin-top: 10px;">
+      <p>
+        <button class="button1" #b1 style="margin-left: 30px;border: none;background: transparent;font-weight:bold;"
+          routerLinkActive="active" routerLink="/ListView1Component">
+          <fa-icon class="ficon" [icon]="faList" style="color:#1b1a1a;padding:10px;font-size: 100%;">
+          </fa-icon>
+          ListView
+        </button>
+        <button class="button1" #b2 style="margin-left: 30px;border: none;background: transparent;font-weight:bold;"
+          routerLinkActive="active" routerLink="/CardView1Component">
+          <fa-icon class="ficon" [icon]="faIdCard" style="color:rgb(29, 28, 28);padding:10px;font-size: 100%;">
+          </fa-icon>
+          Card View
+        </button>
+        <button class="button1" #b3 style="margin-left: 30px;border: none;background: transparent;font-weight:bold;"
+          routerLinkActive="active" routerLink="/MapViewComponent">
+          <fa-icon class="ficon" [icon]="faMapLocationDot" style="color:rgb(29, 28, 28);padding:10px;font-size: 100%;">
+          </fa-icon>
+          Map View
+        </button>
+        <button class="button1" #b4 style="margin-left: 30px;border: none;background: transparent;font-weight:bold;"
+          routerLinkActive="active" routerLink="/NewCustomer1Component">
+          <fa-icon class="ficon" [icon]="faPlus" style="color:rgb(29, 28, 28);padding:10px;font-size: 100%;">
+          </fa-icon>
+          New Customer
+        </button>
+      </p>
+    </nav>
+  </div>
 </body>
+
 </html>
