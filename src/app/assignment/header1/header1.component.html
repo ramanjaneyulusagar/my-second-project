@@ -13,68 +13,121 @@
     }
 
     .active {
-      color: #000000;
+      color: #000000 !important;
+    }
+
+    li {
+      padding-left: 60px;
+
+    }
+
+    .ficon {
+      color: #919191;
+      font-size: 100%;
+      padding: 10px;
+    }
+
+   
+
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .view {
+      color: #919191;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    img,
+    a {
+      margin-left: 30px;
     }
   </style>
 </head>
 
-<body style="width:auto;">
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1e7ddb;">
+    <span>
+      <img class="image" src="./assets/images/people.png" />
+    </span>
+    <div class="container-fluid ">
+
+      <a routerLinkActive="active" routerLink="/Customer1">Customer Manager</a>
+
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-9 ">
+          <li>
+            <a aria-current="page" routerLinkActive="active" routerLink="/ListView1">Customers</a>
+          </li>
+          <li>
+            <a aria-current="page" routerLink="/CustomersDetails1" routerLinkActive="active">Orders</a>
+          </li>
+          <li>
+            <a aria-current="page" routerLink="/AboutA" routerLinkActive="active">About</a>
+          </li>
+          <li>
+            <a aria-current="page" routerLink="/CustomerLogin1" routerLinkActive="active">Login</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <div style="margin-left: 40px;">
+
+    <fa-icon [icon]="faUser" style="font-size: 20px;"></fa-icon>
+    <span class="ics" style="color:black"> Customers</span>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid ">
+
+      <div class="collapse navbar-collapse " id="navbarSupportedContent1">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-9 ">
+          <li>
 
 
-  <nav class="navbar navbar-dark menu" style="padding-left: 0%; background-color: #3592ef;display: flex;">
-    <div class="container " style="padding:0%;margin-top: 0%;margin-left: 50px;">
-      <span>
-        <img class="image" src="./assets/images/people.png" />
-      </span>
+            <a class="view" routerLinkActive="active" routerLink="/ListView1">
+              <fa-icon class="ficon" [icon]="faList" routerLinkActive="active"></fa-icon>ListView
+            </a>
+          </li>
+          <li>
 
-      <span class="hd" routerLinkActive="active" routerLink="/Customer1Component">Customers Manager</span>
+            <a class="view" routerLinkActive="active" routerLink="/CardView1">
+              <fa-icon class="ficon" [icon]="faIdCard" routerLinkActive="active">
+              </fa-icon>CardView
+            </a>
+          </li>
+          <li>
 
-      <span class="hd" routerLinkActive="active" routerLink="/ListView1Component">Customers</span>
-      <span class="hd" routerLink="/CustomersDetails1Component" routerLinkActive="active">Orders</span>
-      <span class="hd" routerLink="/AboutAComponent" routerLinkActive="active">About</span>
-      <span class="hd" routerLink="/CustomerLogin1Component" routerLinkActive="active">Login</span>
+            <a class="view" routerLinkActive="active" routerLink="/MapView">
+              <fa-icon class="ficon" [icon]="faMapLocationDot" routerLinkActive="active">
+              </fa-icon>MapView
+            </a>
+          </li>
+          <li>
+
+            <a class="view" routerLinkActive="active" routerLink="/NewCustomer">
+              <fa-icon class="ficon" [icon]="faPlus" routerLinkActive="active">
+              </fa-icon>NewCustomer
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </a>
     </div>
   </nav>
 
-  <div style="margin-left: 45px;">
-
-    <fa-icon class="ficon" [icon]="faUser" style="color:#1d1c1c;"></fa-icon>
-    <span class="ics" style="color:black"> Customers</span>
-  </div>
-
-
-
-
-  <div>
-    <nav style="margin-top: 10px;">
-      <p>
-        <button class="button1" #b1 style="margin-left: 30px;border: none;background: transparent;font-weight:bold;"
-          routerLinkActive="active" routerLink="/ListView1Component">
-          <fa-icon class="ficon" [icon]="faList" style="color:#1b1a1a;padding:10px;font-size: 100%;">
-          </fa-icon>
-          ListView
-        </button>
-        <button class="button1" #b2 style="margin-left: 30px;border: none;background: transparent;font-weight:bold;"
-          routerLinkActive="active" routerLink="/CardView1Component">
-          <fa-icon class="ficon" [icon]="faIdCard" style="color:rgb(29, 28, 28);padding:10px;font-size: 100%;">
-          </fa-icon>
-          Card View
-        </button>
-        <button class="button1" #b3 style="margin-left: 30px;border: none;background: transparent;font-weight:bold;"
-          routerLinkActive="active" routerLink="/MapViewComponent">
-          <fa-icon class="ficon" [icon]="faMapLocationDot" style="color:rgb(29, 28, 28);padding:10px;font-size: 100%;">
-          </fa-icon>
-          Map View
-        </button>
-        <button class="button1" #b4 style="margin-left: 30px;border: none;background: transparent;font-weight:bold;"
-          routerLinkActive="active" routerLink="/NewCustomer1Component">
-          <fa-icon class="ficon" [icon]="faPlus" style="color:rgb(29, 28, 28);padding:10px;font-size: 100%;">
-          </fa-icon>
-          New Customer
-        </button>
-      </p>
-    </nav>
-  </div>
 </body>
 
 </html>

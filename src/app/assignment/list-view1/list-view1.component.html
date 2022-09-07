@@ -15,7 +15,7 @@
     <input type="text" placeholder="search" [(ngModel)]="sear"
         style="margin-left: 5px;border:solid 1px black;border-radius: 2;" />
 </b>
-<table #table class="table table-striped" style="margin-left :40px ;">
+<table #table class="table table-striped" style="margin-left :40px ;" >
     <thead>
         <tr>
             <th>Image</th>
@@ -31,8 +31,8 @@
         </tr>
 
     </thead>
-    <tbody style="font-size: 15px;">
-        <tr ngApp *ngFor="let customer of custom|filter:sear|paginate: { itemsPerPage: 10, currentPage: p }"
+    <tbody style="font-size: 15px;" >
+        <tr ngApp    *ngFor="let customer of custom|filter:sear|paginate: { itemsPerPage: 12, currentPage: p }" 
             style="border:2px solid none;">
 
             <td *ngIf="customer.gender==='male'">
@@ -47,17 +47,13 @@
 
 
 
-            <td style="cursor: pointer;color: rgb(61, 61, 180);">{{customer.firstName}}</td>
+            <td (click)="routeToCustomerDetails(customer)" style="cursor: pointer;color: rgb(61, 61, 180);">{{customer.firstName}}</td>
             <td>{{customer.lastName}}</td>
             <td>{{customer.address}}</td>
             <td>{{customer.city}}</td>
-
             <td>{{customer.state.name}}</td>
-
-            <td>{{customer.cost|number}}
-            </td>
-            <td>{{customer.state.abbreviation}}</td>
-            <td (click)="routeToOrderDetails(customer)" style="cursor: pointer;color: rgb(61, 61, 180);">view orders
+            <td>{{customer.cost|number}}</td>
+            <td (click)="routeToViewOrder(customer)" style="cursor: pointer;color: rgb(61, 61, 180);">view orders
             </td>
 
         </tr>
@@ -66,3 +62,5 @@
 </table>
 
 <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
+
+

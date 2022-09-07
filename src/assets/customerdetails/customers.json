@@ -6,16 +6,17 @@
             "gender": "male",
             "address": "1234 Anywhere St.",
             "city": " Phoenix ",
-            "state": {
+            "state": [{
                 "abbreviation": "AZ",
                 "name": "Arizona"
-            },
+            }],
             "orders": [
                 {"productName": "Basketball", "itemCost": 7.99},
                 {"productName": "Shoes", "itemCost": 199.99}
             ],
             "latitude": 33.299,
             "longitude": -111.963
+        
       },
       {
             "id": 2,

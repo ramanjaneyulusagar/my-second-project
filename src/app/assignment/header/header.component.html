@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,33 +10,79 @@
       font-size: 18px;
       font-weight: bolder;
     }
+
+    .active {
+      color: #000000 !important;
+    }
+
+    li {
+      padding-left: 60px;
+
+    }
+
+    .ficon {
+      color: #919191;
+      font-size: 100%;
+      padding: 10px;
+    }
+
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .view {
+      color: #919191;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    img,
+    a {
+      margin-left: 30px;
+    }
   </style>
 </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1e7ddb;">
+    <span>
+      <img class="image" src="./assets/images/people.png" />
+    </span>
+    <div class="container-fluid ">
 
-<body style="width:auto">
+      <a routerLinkActive="active" routerLink="/Customer1">Customer Manager</a>
 
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-9 ">
+          <li>
+            <a aria-current="page" routerLinkActive="active" routerLink="/ListView1">Customers</a>
+          </li>
+          <li>
+            <a aria-current="page" routerLink="/CustomersDetails1" routerLinkActive="active">Orders</a>
+          </li>
+          <li>
+            <a aria-current="page" routerLink="/AboutA" routerLinkActive="active">About</a>
+          </li>
+          <li>
+            <a aria-current="page" routerLink="/CustomerLogin1" routerLinkActive="active">Login</a>
+          </li>
+        </ul>
+      </div>
 
-  <nav class="navbar navbar-dark menu" style="padding-left: 0%;background-color:#3d9bf9;">
-    <div class="container " style="padding:0%;margin-top: 0%;margin-left: 50px;">
-      <span>
-        <img class="image" src="./assets/images/people.png" />
-      </span>
-
-      <span class="hd" routerLinkActive="active" routerLink="/Customer1Component">Customers Manager</span>
-
-      <span class="hd" routerLinkActive="active" routerLink="/ListView1Component">Customers</span>
-      <span class="hd" routerLink="/CustomersDetails1Component" routerLinkActive="active">Orders</span>
-      <span class="hd" routerLink="/AboutAComponent" routerLinkActive="active">About</span>
-      <span class="hd" routerLink="/CustomerLogin1Component" routerLinkActive="active">Login</span>
     </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </nav>
 
-  <div class="searchfilter" style="margin-left: 45px;">
+  <div style="margin-left: 40px;">
 
-    <fa-icon class="ficon" [icon]="faUser" style="color:rgb(29, 28, 28);padding:10px;"></fa-icon>
+    <fa-icon [icon]="faUser" style="font-size: 20px;"></fa-icon>
     <span class="ics" style="color:black"> Customers</span>
   </div>
+ 
 
 </body>
-
 </html>

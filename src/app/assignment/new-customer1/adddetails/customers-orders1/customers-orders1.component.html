@@ -1,29 +1,100 @@
 <app-header></app-header>
-<style>
-    .container {
-        -webkit-padding-end: 20%;
 
-    }
+    <!DOCTYPE html>
+<html lang="en">
 
-    .active {
-        color: #4a40d6;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: #000000 !important;
+        }
 
-    .span {
-        font-size: 18px;
-        font-weight: lighter;
-        font-style: oblique;
-    }
-</style>
-<nav class="navbar navbar-expand-md" style="overflow:auto;">
-    <div class="container">
+        li {
+            padding-left: 60px;
 
-        <span class="span" #b1 routerLinkActive="active"
-            routerLink="/CustomersDetails1Component"><b>CustomersDetails</b></span>
-        <span class="span" #b2 routerLinkActive="active"
-            routerLink="/CustomersOrders1Component"><b>CustomersOrders</b></span>
-        <span class="span" #b3 routerLinkActive="active"
-            routerLink="/EditCustomer1Component"><b>EditCustomers</b></span>
+        }
 
+        .ficon {
+            color: #919191;
+            font-size: 100%;
+            padding: 10px;
+        }
+
+
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .view {
+            color: #919191;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+        img,
+        a {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid ">
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent1">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-9 ">
+                    <li>
+                        <a class="view" routerLinkActive="active" routerLink="/CustomersDetails1">
+                            CustomersDetails
+                        </a>
+                    </li>
+                    <li>
+
+                        <a class="view" routerLinkActive="active" routerLink="/CustomersOrders1">
+                            CustomersOrders
+                        </a>
+                    </li>
+                    <li>
+
+                        <a class="view" routerLinkActive="active" routerLink="/EditCustomer1">
+                            EditCustomers
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </a>
+        </div>
+
+    </nav>
+    <div>
+        <span>{{names?.firstName}}</span><br />
+        <img *ngIf="names?.gender==='male'" src="./assets/images/male.png" width="60px"
+            style="float: left;padding-right: 10px;" />
+        <img *ngIf="names?.gender==='female'" src="./assets/images/female.png" width="60px"
+            style="float: left;padding-right: 10px" />
+       
+        <span>{{names?.lastName}}</span><br />
+        <span>{{names?.gender}}</span><br />
+        <span>{{names?.city}}</span><br />
+        <span>{{names?.state.name}}</span><br />
+        <span>{{names?.address}}</span><br />
+    
+    
+    
     </div>
-</nav>
+</body>
+
+</html>

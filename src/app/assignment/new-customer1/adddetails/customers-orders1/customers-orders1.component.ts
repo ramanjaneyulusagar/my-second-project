@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { faFilm,faPeopleGroup,faUser,faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import data from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/customers.json';
 import data1 from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/states.json';
@@ -40,9 +41,13 @@ export class CustomersOrders1Component implements OnInit {
     sear:string='';
     custom:customer[]=data;
     custom1:customer1[]=data1;
-  constructor() { }
-
+  constructor(private routeto:ActivatedRoute) { }
+names:any;
   ngOnInit(): void {
+    this.routeto.queryParams.subscribe(((paramdata:any) => {
+      this.names=paramdata
+    }))
+    console.log(this.names)
   }
 
 }

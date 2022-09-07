@@ -48,16 +48,26 @@ export class ListView1Component implements OnInit {
       };
     })
   };
-  name: any;
-  
-  routeToOrderDetails(singlecustomerdata:any) {
-    this.route1.navigate(['CustomersDetails1Component'],
+  name: any = [];
+
+  routeToViewOrder(singlecustomerdata: any) {
+    debugger;
+    this.route1.navigate(['CustomersOrders1'],
       {
         queryParams: {
-          ...singlecustomerdata,
+          ...singlecustomerdata
+
         }
       });
-    this.name = singlecustomerdata;
-    console.log(singlecustomerdata)
-  };
+  }
+  routeToCustomerDetails(singlecustomerdata: any) {
+    debugger;
+    this.route1.navigate(['Onclickcustomerdata'],
+      {
+        queryParams: {
+          ...singlecustomerdata
+
+        }
+      });
+  }
 };
