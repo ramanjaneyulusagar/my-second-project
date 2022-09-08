@@ -21,7 +21,6 @@ import { FilterPipe } from './assignment/filter.pipe';
 import { ListView1Component } from './assignment/list-view1/list-view1.component';
 import { CardView1Component } from './assignment/card-view1/card-view1.component';
 import { MapViewComponent } from './assignment/map-view/map-view.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomersDetails1Component } from './assignment/new-customer1/adddetails/customers-details1/customers-details1.component';
 import { CustomersOrders1Component } from './assignment/new-customer1/adddetails/customers-orders1/customers-orders1.component';
@@ -34,7 +33,8 @@ import { ChildComponent } from './parent/child/child/child.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NewCustomerComponent } from './assignment/new-customer1/adddetails/new-customer/new-customer.component';
 import { OnclickcustomerdataComponent } from './assignment/new-customer1/onclickcustomerdata/onclickcustomerdata.component';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { Header2Component } from './assignment/header2/header2.component';
 
 @NgModule({
   declarations: [
@@ -59,13 +59,14 @@ import { OnclickcustomerdataComponent } from './assignment/new-customer1/onclick
     ChildComponent,
     NewCustomerComponent,
     OnclickcustomerdataComponent,
+    Header2Component,
   ],
 
   imports: [
     BrowserModule,
     NgbModule, HttpClientModule, NgxPaginationModule, GoogleMapsModule,
     AppRoutingModule,
-    FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule,
+    FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule,MatFormFieldModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

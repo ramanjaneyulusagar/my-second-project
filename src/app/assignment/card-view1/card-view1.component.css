@@ -1,1 +1,60 @@
-.active{color: #930202;}
+
+  .filter {
+    float: right;
+  }
+
+  .button1 {
+    font-weight: lighter;
+    margin-right: 0px;
+  }
+
+  .input1 {
+    margin-left: 5px;
+    border: solid 1px black;
+    border-radius: 2px;
+    margin-right: 25px;
+  }
+
+  .menu {
+    margin-left: 25px;
+  }
+
+  .menu1 {
+    width: 310px;
+  }
+
+  .menu2 {
+    border: solid 1px #b4b6b6;
+    margin: 10px;
+  }
+
+  .menu3 {
+    background-color: #1e7ddb;
+    font-size: medium;
+    color: white;
+    height: 40px;
+  }
+
+  .menu4 {
+    display: flex;
+  }
+
+  .span1 {
+    margin-left: 10px;
+  }
+
+  fa-icon {
+    color: white;
+    margin-right: 10px;
+    float: right;
+  }
+
+  img {
+    float: left;
+    padding-right: 10px;
+  }
+
+  .span2 {
+    color: #1e7ddb;
+  }
+

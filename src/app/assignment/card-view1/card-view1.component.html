@@ -1,4 +1,3 @@
-
 <app-header1></app-header1>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,100 +8,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
-
-  <!-- <div class="card" style="width: 18rem;"    *ngFor="let customer of custom">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p style="float: left;" >{{customer.firstName}}
-            {{customer.lastName}}<fa-icon  [icon]="faPenToSquare" style="color:black;float: right;"></fa-icon>
-          </p> 
-        </div>
-        <h1>hello wordl</h1>
-        <div class="card-body">
-          <p   >
-      
-            <b>{{customer.id}}</b><br/>
-            <b>{{customer.city}}</b><br/>
-            <b>{{customer.gender}}</b><br/>
-            <b>{{customer.address}}</b><br/>
-            <b>{{customer.latitude}}</b><br/>
-            <b>{{customer.longitude}}</b><br/>
-            <b>{{customer.state.abbreviation}}</b><br/>
-            <b>{{customer.state.name}}</b><br/>
-              </p>
-        </div>
-      </div>
-    -->
-  <b style="float: right;">
-    <label class="button1" style="font-weight:lighter;margin-right: 0px;">Filter </label>
-    <input type="text" placeholder="search" [(ngModel)]="sear"
-      style="margin-left: 5px;border:solid 1px black;border-radius:2px;margin-right: 25px;" />
+  <b class="filter">
+    <label class="button1">Filter </label>
+    <input type="text" placeholder="search" [(ngModel)]="sear" class="input1" />
   </b><br /><br />
-  <div class="row" style="margin-left:25px;">
+  <div class="row menu">
     <div class="col-md-12">
       <div class="x_panel">
         <div class="x_content">
           <div class="row">
 
 
+            <div class="col-md-4 col-sm-4 col-xs-12 profile_details menu1"
+              *ngFor="let customer of custom|paginate: { itemsPerPage: 10, currentPage: p }|filter:sear;">
 
+              <div class="box-body menu2">
 
+                <div class="menu3">
 
-            <div class="col-md-4 col-sm-4 col-xs-12 profile_details"
-              *ngFor="let customer of custom|paginate: { itemsPerPage: 12, currentPage: p }|filter:sear;"
-              style="width: 310px;">
+                  <span class="span1">{{customer.firstName}} {{customer.lastName}}</span>
+                  <fa-icon [icon]="faPenToSquare"></fa-icon>
 
-              <div class="box-body" style="border:solid 1px #131414;margin: 10px;">
+                </div>
 
-                <div class="col-sm-12">
+                <div class="col-sm-12 menu4">
 
-                  <h4 style="background-color:cornflowerblue;font-size: medium;color: white;">
-                    {{customer.firstName}} {{customer.lastName}}
-                    <fa-icon [icon]="faPenToSquare" style="color:white;float: right;"></fa-icon>
-                  </h4>
+                  <div style="margin:8px;">
 
+                    <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px" />
+                    <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px" />
+
+                  </div>
+                  <div>
+                    <span>{{customer.city}}</span>
+                    <br />
+                    <span>{{customer.state.name}}</span>
+                    <br />
+                    <span class="span2">ViewOrders</span>
+                    <br />
+                  </div>
                   <br />
-                  <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px"
-                    style="float: left;padding-right: 10px;" />
-                  <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px"
-                    style="float: left;padding-right: 10px" />
-                  <span>
-
-
-
-
-                    <b>{{customer.id}}</b><br />
-                    <b>city:{{customer.city}}</b><br />
-
-                    <b>state:{{customer.state.name}}</b></span><br />
-
-                  <b>{{customer.gender}}</b><br />
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
 
               </div>
             </div>
-
-
-
-
-
-
 
           </div>
 

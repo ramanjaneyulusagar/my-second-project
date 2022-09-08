@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 import data from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/customers.json';
 import data1 from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/states.json';
@@ -50,7 +50,7 @@ export class ListView1Component implements OnInit {
   };
   name: any = [];
 
-  routeToViewOrder(singlecustomerdata: any) {
+  routeToViewOrder(singlecustomerdata:any) {
     debugger;
     this.route1.navigate(['CustomersOrders1'],
       {
@@ -60,12 +60,13 @@ export class ListView1Component implements OnInit {
         }
       });
   }
-  routeToCustomerDetails(singlecustomerdata: any) {
+  
+  routeToCustomerDetails(singlecustomer: any) {
     debugger;
     this.route1.navigate(['Onclickcustomerdata'],
       {
         queryParams: {
-          ...singlecustomerdata
+          ...singlecustomer
 
         }
       });
