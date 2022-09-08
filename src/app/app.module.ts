@@ -13,7 +13,6 @@ import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CustomerLogin1Component } from './customer-login1/customer-login1.component';
 import { CustomersAComponent } from './assignment/customers-a/customers-a.component';
 import { CustomersDetailsAComponent } from './assignment/customers-details-a/customers-details-a.component';
 import { AboutAComponent } from './assignment/about-a/about-a.component';
@@ -43,7 +42,6 @@ import { OnclickcustomerdataComponent } from './assignment/new-customer1/onclick
     Angular1Component,
     EmployeedataComponent,
     Assignment1Component,
-    CustomerLogin1Component,
     CustomersAComponent,
     CustomersDetailsAComponent,
     AboutAComponent,

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'
 import { EmployeedataComponent } from './employeedata/employeedata.component';
 import { Assignment1Component } from './assignment1/assignment1.component';
-import { CustomerLogin1Component } from './customer-login1/customer-login1.component';
 import { CustomersAComponent } from './assignment/customers-a/customers-a.component';
 import { AboutAComponent } from './assignment/about-a/about-a.component';
 import { LoginAComponent } from './assignment/login-a/login-a.component';
@@ -22,7 +21,6 @@ import { OnclickcustomerdataComponent } from './assignment/new-customer1/onclick
 const routes: Routes = [
  // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'Assignment1', component: Assignment1Component },
-  { path: 'CustomerLogin1', component: CustomerLogin1Component },
   { path: 'CustomersA', component: CustomersAComponent },
   { path: 'Employeedata', component: EmployeedataComponent },
   { path: 'CardView1', component: CardView1Component },
