@@ -40,37 +40,28 @@ export class CardView1Component implements OnInit {
   faPenToSquare = faPenToSquare;
   selectedData: any;
   @ViewChild('sp', { static: false }) sp: any;
-  constructor(private http: HttpClient,private service:Service1Service) { }
-  sear:string='';
+  constructor(private http: HttpClient, private service: Service1Service) { }
+  sear: string = '';
   p: number = 1;
   total: number = 0;
   ngOnInit() {
-    
-  }
-  
 
-  data:any;
+  }
+
+
+  data: any;
   viewDetails(userData: any) {
     console.log(userData);
-   this.selectedData=userData;
+    this.selectedData = userData;
 
 
+    if (this.sp.nativeElement.style.display === "block") {
+      this.sp.nativeElement.style.display = "none";
 
-
-    // console.log('jlhgfdghj' + JSON.stringify(userData));
-    // this.b1=JSON.stringify(userData);
-    
-
-    if( this.sp.nativeElement.style.display==="block"){
-      this.sp.nativeElement.style.display="none";
-      
-     }
-     else {
-       this.sp.nativeElement.style.display="block";
-     }
-    
-    // alert(JSON.stringify(userData));
-    //alert(userData.id);
+    }
+    else {
+      this.sp.nativeElement.style.display = "block";
+    }
 
   }
 }

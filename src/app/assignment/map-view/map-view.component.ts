@@ -14,8 +14,8 @@ export class MapViewComponent implements OnInit {
   center: google.maps.LatLngLiteral = { lat: 24, lng: 12 };
   display: any
   zoom = 1;
-  markerOptions:google.maps.MarkerOptions={draggable:true};
-  markerPositions:google.maps.LatLngLiteral[]=[];
+  markerOptions: google.maps.MarkerOptions = { draggable: true };
+  markerPositions: google.maps.LatLngLiteral[] = [];
 
   moveMap(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) {
@@ -28,49 +28,16 @@ export class MapViewComponent implements OnInit {
       this.display = (event.latLng.toJSON());
     }
   }
- addMarker(event:google.maps.MapMouseEvent){
-  if(event.latLng!=null){
-    this.markerPositions.push(event.latLng.toJSON());
+  addMarker(event: google.maps.MapMouseEvent) {
+    if (event.latLng != null) {
+      this.markerPositions.push(event.latLng.toJSON());
+    }
   }
- }
- 
+
   constructor() { }
 
   ngOnInit(): void {
 
   }
-  /*
-  ngAfterViewInit(): void {
-    
-    const searchBox = new google.maps.places.SearchBox
-      (this.searchField.nativeElement,);
-    this.map.controls
-    [google.maps.ControlPosition.TOP_CENTER].push
-      (this.searchField.nativeElement,);
-    searchBox.addListener
-      ('places_changed', () => {
 
-        const places = searchBox.getPlaces();
-
-        if (places?.length === 0) {
-          return;
-        }
-        const bounds = new google.maps.LatLngBounds();
-        places?.forEach
-          (place => {
-
-            if (!place.geometry || !place.geometry.location) {
-              return;
-            }
-            if (place.geometry.viewport) {
-              bounds.union(place.geometry.viewport);
-            }
-            else {
-              bounds.extend(place.geometry.location);
-            }
-          });
-        this.map.fitBounds(bounds)
-      })
-  }
-*/
 }

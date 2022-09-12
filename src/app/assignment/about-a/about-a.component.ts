@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faFilm,faPeopleGroup,faUser,faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faFilm, faPeopleGroup, faUser, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-about-a',
@@ -7,11 +7,11 @@ import { faFilm,faPeopleGroup,faUser,faPenToSquare } from '@fortawesome/free-sol
   styleUrls: ['./about-a.component.css']
 })
 export class AboutAComponent implements OnInit {
-  faFilm=faFilm;
-  faPenToSquare=faPenToSquare;
-  faPeopleGroup=faPeopleGroup;
-  faUser=faUser;
-  search1='';
+  faFilm = faFilm;
+  faPenToSquare = faPenToSquare;
+  faPeopleGroup = faPeopleGroup;
+  faUser = faUser;
+  search1 = '';
   constructor() { }
 
   ngOnInit(): void {

@@ -19,12 +19,12 @@ export class CustomersOrders1Component implements OnInit {
   sear: string = '';
   constructor(private routeto: ActivatedRoute) { }
   names: any;
-  name=sessionStorage.getItem("name");
+  name = sessionStorage.getItem("name");
   @ViewChild(ListView1Component) userdata!: ListView1Component;
   ngOnInit(): void {
     this.routeto.queryParams.subscribe(((paramdata: any) => {
       this.names = paramdata
-      
+
     }))
     console.log(this.names);
 

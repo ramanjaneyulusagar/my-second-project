@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div>
-    <p>assignment1 works!</p>
-<h1>hello world</h1>
-<button (click)="hello('ram')">click to get out put on console</button>
-<br />
-<br />
+        <p>assignment1 works!</p>
+        <h1>hello world</h1>
+        <button (click)="hello('ram')">click to get out put on console</button>
+        <br />
+        <br />
 
-<p><label>keydown</label><input  #i1  (keydown)="getName(i1.value)"   /></p>
-<br />
-<br />
-<label>keyup</label>
-<input  #i2  (keyup)="getName(i2.value)"   />
-<br />
-<br />
-<label>input</label>
-<input  id="i3"  #i3 (input)="getName(i3.value)"   />
-<br />
-<br />
-<label>blur</label>
-<input  #i4  (blur)="getName(i4.value)"   />    
-<h1>{{i1.value}}|{{i2.value}}|{{i3.value}}|{{i4.value}}</h1>
+        <p><label>keydown</label><input #i1 (keydown)="getName(i1.value)" /></p>
+        <br />
+        <br />
+        <label>keyup</label>
+        <input #i2 (keyup)="getName(i2.value)" />
+        <br />
+        <br />
+        <label>input</label>
+        <input id="i3" #i3 (input)="getName(i3.value)" />
+        <br />
+        <br />
+        <label>blur</label>
+        <input #i4 (blur)="getName(i4.value)" />
+        <h1>{{i1.value}}|{{i2.value}}|{{i3.value}}|{{i4.value}}</h1>
 
-<h3 class="id"  (mouseover)="get('hello')">hello</h3>
-</div>
+        <h3 class="id" (mouseover)="get('hello')">hello</h3>
+    </div>
 
 
 
-<div class="div1" name="hel">
-<h1>counter value increase and decrease</h1>
-<button (click)="value('add')">add</button>
-<h1>count:{{value1}}</h1>
-<button (click)="value('minus')">minus</button>
-<h1 style="color:brown">interpolation and property binding interpolation does show the difference betwenn the boolean value</h1>
-<input  value={{name}} disabled={{disable}}  />
-<input   value="propety binding" [disabled]=disable />
-<button  (click)="whg()">disable &enable  input </button>
- 
-<div id="dic">
-<h1 *ngIf="show;then if1 else elseb"  ></h1>
-<ng-template #if1>
-<h1 >hello world</h1>
-</ng-template>
-<ng-template  #elseb>
-    <h1>hello world else condition</h1>
-    </ng-template>
-<h3>
-<h1   *ngFor="let item of student"> name:{{item.name}}--age: {{item.age}}--mail:{{item.email}}</h1>
-</h3>
-</div>
-</div>
+    <div class="div1" name="hel">
+        <h1>counter value increase and decrease</h1>
+        <button (click)="value('add')">add</button>
+        <h1>count:{{value1}}</h1>
+        <button (click)="value('minus')">minus</button>
+        <h1 style="color:brown">interpolation and property binding interpolation does show the difference betwenn the
+            boolean value</h1>
+        <input value={{name}} disabled={{disable}} />
+        <input value="propety binding" [disabled]=disable />
+        <button (click)="whg()">disable &enable input </button>
+
+        <div id="dic">
+            <h1 *ngIf="show;then if1 else elseb"></h1>
+            <ng-template #if1>
+                <h1>hello world</h1>
+            </ng-template>
+            <ng-template #elseb>
+                <h1>hello world else condition</h1>
+            </ng-template>
+            <h3>
+                <h1 *ngFor="let item of student"> name:{{item.name}}--age: {{item.age}}--mail:{{item.email}}</h1>
+            </h3>
+        </div>
+    </div>
 </body>
-</html>
 
+</html>

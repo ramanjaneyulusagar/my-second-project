@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ListView1Component } from '../../list-view1/list-view1.component';
 @Component({
@@ -7,22 +7,22 @@ import { ListView1Component } from '../../list-view1/list-view1.component';
   styleUrls: ['./onclickcustomerdata.component.css']
 })
 export class OnclickcustomerdataComponent implements OnInit {
-names:any;
-  constructor(private routeto:ActivatedRoute) { }
+  names: any;
+  constructor(private routeto: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.routeto.queryParams.subscribe(((paramdata:any) => {
-      this.names=paramdata
-      sessionStorage.setItem("name",paramdata);
+    this.routeto.queryParams.subscribe(((paramdata: any) => {
+      this.names = paramdata
+      sessionStorage.setItem("name", paramdata);
     }))
     console.log(this.names)
   }
-  @ViewChild(ListView1Component) variable!:ListView1Component;
+  @ViewChild(ListView1Component) variable!: ListView1Component;
   center: google.maps.LatLngLiteral = { lat: 24, lng: 12 };
   display: any
   zoom = 1;
-  markerOptions:google.maps.MarkerOptions={draggable:true};
-  markerPositions:google.maps.LatLngLiteral[]=[];
+  markerOptions: google.maps.MarkerOptions = { draggable: true };
+  markerPositions: google.maps.LatLngLiteral[] = [];
 
   moveMap(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) {
@@ -35,12 +35,12 @@ names:any;
       this.display = (event.latLng.toJSON());
     }
   }
- addMarker(event:google.maps.MapMouseEvent){
-  if(event.latLng!=null){
-    this.markerPositions.push(event.latLng.toJSON());
-  }
- }
-  
+  addMarker(event: google.maps.MapMouseEvent) {
+    if (event.latLng != null) {
+      this.markerPositions.push(event.latLng.toJSON());
+    }
   }
 
- 
+}
+
+

@@ -45,18 +45,18 @@ export class CustomersDetails1Component implements OnInit {
   faUser = faUser;
   f: string = '';
   sear: string = '';
-  names:any;
+  names: any;
   custom: customer[] = data;
   custom1: customer1[] = data1;
   customerdatatranfer: any;
   importListView: any;
   //objectKeys = Object.keys;
   ngOnInit() {
-    
-  
-//this.names=data[(parseInt(this.routeto.queryParams(['_value'].id, 10) -1)];
-    this.routeto.queryParams.subscribe(((paramdata:any) => {
-      this.names=paramdata
+
+
+    //this.names=data[(parseInt(this.routeto.queryParams(['_value'].id, 10) -1)];
+    this.routeto.queryParams.subscribe(((paramdata: any) => {
+      this.names = paramdata
     }))
     console.log(this.names)
   }

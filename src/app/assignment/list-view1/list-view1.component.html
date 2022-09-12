@@ -15,8 +15,8 @@
     <input type="text" placeholder="search" [(ngModel)]="sear"
         style="margin-left: 5px;border:solid 1px black;border-radius: 2;" />
 </b>
-<br/><br/>
-<table #table class="table table-striped" style="margin-left :30px ;" >
+<br /><br />
+<table #table class="table table-striped" style="margin-left :30px ;">
     <thead>
         <tr>
             <th></th>
@@ -30,8 +30,8 @@
         </tr>
 
     </thead>
-    <tbody style="font-size: 15px;" >
-        <tr ngApp    *ngFor="let customer of custom|filter:sear|paginate: { itemsPerPage: 12, currentPage: p }" 
+    <tbody style="font-size: 15px;">
+        <tr ngApp *ngFor="let customer of custom|filter:sear|paginate: { itemsPerPage: 12, currentPage: p }"
             style="border:2px solid none;">
 
             <td *ngIf="customer.gender==='male'">
@@ -46,7 +46,8 @@
 
 
 
-            <td (click)="routeToCustomerDetails(customer)" style="cursor: pointer;color: rgb(61, 61, 180);">{{customer.firstName}}</td>
+            <td (click)="routeToCustomerDetails(customer)" style="cursor: pointer;color: rgb(61, 61, 180);">
+                {{customer.firstName}}</td>
             <td>{{customer.lastName}}</td>
             <td>{{customer.address}}</td>
             <td>{{customer.city}}</td>
@@ -61,5 +62,3 @@
 </table>
 
 <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
-
-

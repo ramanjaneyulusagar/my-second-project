@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faFilm, faPeopleGroup, faUser, faPenToSquare, faList, faTags, faPenSquare } from '@fortawesome/free-solid-svg-icons';
 import data from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/customers.json';
@@ -16,11 +16,11 @@ export class Header2Component implements OnInit {
   faUser = faUser;
   faList = faList; faPenSquare = faPenSquare;
   faTags = faTags;
-  constructor(private route: Router,private routeto:ActivatedRoute) { }
-names:any
+  constructor(private route: Router, private routeto: ActivatedRoute) { }
+  names: any
   ngOnInit(): void {
-   
-  
+
+
   }
   @ViewChild(ListView1Component) userdata!: ListView1Component;
 

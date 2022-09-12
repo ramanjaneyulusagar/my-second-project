@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { faFilm,faPeopleGroup,faUser,faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faFilm, faPeopleGroup, faUser, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import data from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/customers.json';
 import data1 from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/states.json';
-interface customer1{
-  _id:string,
+interface customer1 {
+  _id: string,
   id: number,
   name: string
   abbreviation: string
 }
 
-interface customer{
+interface customer {
 
-id:string,
-firstName:string,lastName:string,
-gender:string,
-address:string,
-city:string,
-state:{abbreviation:string,name:string},
-orders:[{
-    productName:string
-    itemCost:number 
-}
-] 
-,
-latitude:number,longitude:number
+  id: string,
+  firstName: string, lastName: string,
+  gender: string,
+  address: string,
+  city: string,
+  state: { abbreviation: string, name: string },
+  orders: [{
+    productName: string
+    itemCost: number
+  }
+  ]
+  ,
+  latitude: number, longitude: number
 }
 @Component({
   selector: 'app-edit-customer1',
@@ -31,14 +31,14 @@ latitude:number,longitude:number
   styleUrls: ['./edit-customer1.component.css']
 })
 export class EditCustomer1Component implements OnInit {
-  faFilm=faFilm;
-  faPenToSquare=faPenToSquare;
-  faPeopleGroup=faPeopleGroup;
-  faUser=faUser;
-   f:string='';
-    sear:string='';
-    custom:customer[]=data;
-    custom1:customer1[]=data1;
+  faFilm = faFilm;
+  faPenToSquare = faPenToSquare;
+  faPeopleGroup = faPeopleGroup;
+  faUser = faUser;
+  f: string = '';
+  sear: string = '';
+  custom: customer[] = data;
+  custom1: customer1[] = data1;
   constructor() { }
 
   ngOnInit(): void {
