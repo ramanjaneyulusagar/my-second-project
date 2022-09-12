@@ -9,7 +9,7 @@ span {
 }
 
 li {
-  padding-left: 60px;
+  padding-left: 17px;
 
 }
 
@@ -36,4 +36,11 @@ a {
 img,
 a {
   margin-left: 30px;
+}
+.ics
+{
+  color: rgb(51, 49, 49);
+font-size: 25px;
+margin-left: 10px;
+font-weight: 400;
 }
