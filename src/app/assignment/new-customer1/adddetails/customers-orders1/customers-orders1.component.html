@@ -1,21 +1,22 @@
 <app-header></app-header>
 <app-header2></app-header2>
-<ng-template [ngIf]="names">
+<ng-template [ngIf]="'names'">
     <div>
 
-        <span>{{names?.firstName}}</span><br />
-        <img *ngIf="names?.gender==='male'" src="./assets/images/male.png" width="60px"
-            style="float: left;padding-right: 10px;" />
-        <img *ngIf="names?.gender==='female'" src="./assets/images/female.png" width="60px"
-            style="float: left;padding-right: 10px" />
-
-        <span>{{names?.lastName}}</span><br />
-        <span>{{names?.gender}}</span><br />
-        <span>{{names?.city}}</span><br />
-        <span>{{names?.state.name}}</span><br />
-        <span>{{names?.address}}</span><br />
-
-
-
+        <div>
+            <h1>Orders for {{data?.firstName}} {{data?.lastName}}</h1>
+        </div>
+        <div>
+            <table>
+                <tr>{{data?.state.name}}
+                   
+                </tr>
+                <tr>
+                    <td *ngFor="let order of data.orders">
+                        {{order.productName}}
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </ng-template>

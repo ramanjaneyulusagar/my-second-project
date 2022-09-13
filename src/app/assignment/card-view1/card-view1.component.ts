@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import data1 from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/states.json';
-import data from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/customers.json';
+import data from 'C:/angularAssignment/my-second-project/src/assets/customerdetails/customers.json'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { Service1Service } from 'src/app/service/service1.service';
 
@@ -35,8 +34,8 @@ interface customer {
 })
 export class CardView1Component implements OnInit {
 
-  custom1: customer1[] = data1;
-  custom: customer[] = data;
+
+  custom= data;
   faPenToSquare = faPenToSquare;
   selectedData: any;
   @ViewChild('sp', { static: false }) sp: any;
@@ -49,19 +48,6 @@ export class CardView1Component implements OnInit {
   }
 
 
-  data: any;
-  viewDetails(userData: any) {
-    console.log(userData);
-    this.selectedData = userData;
-
-
-    if (this.sp.nativeElement.style.display === "block") {
-      this.sp.nativeElement.style.display = "none";
-
-    }
-    else {
-      this.sp.nativeElement.style.display = "block";
-    }
-
-  }
+  
+  
 }

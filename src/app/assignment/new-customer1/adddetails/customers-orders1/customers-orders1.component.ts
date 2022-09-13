@@ -1,10 +1,23 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Data } from '@angular/router';
 import { faFilm, faPeopleGroup, faUser, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import data from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/customers.json';
-import data1 from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/states.json';
 import { ListView1Component } from 'src/app/assignment/list-view1/list-view1.component';
-
+interface customer {
+  id: string,
+  firstName: string, lastName: string,
+  gender: string,
+  address: string,
+  city: string,
+  state: {
+    abbreviation: string, name: string
+  },
+  orders:
+  [{
+    productName: string
+    itemCost: number
+  }],
+  latitude: number, longitude: number
+};
 @Component({
   selector: 'app-customers-orders1',
   templateUrl: './customers-orders1.component.html',
@@ -17,16 +30,16 @@ export class CustomersOrders1Component implements OnInit {
   faUser = faUser;
   f: string = '';
   sear: string = '';
-  constructor(private routeto: ActivatedRoute) { }
-  names: any;
+  constructor(private activatedRoute: ActivatedRoute) { }
+  data: any
   name = sessionStorage.getItem("name");
   @ViewChild(ListView1Component) userdata!: ListView1Component;
   ngOnInit(): void {
-    this.routeto.queryParams.subscribe(((paramdata: any) => {
-      this.names = paramdata
-
+    this.activatedRoute.queryParams.subscribe(((paramdata: any) => {
+      this.data = JSON.parse(paramdata.data)
+      console.log(paramdata)
     }))
-    console.log(this.names);
+    console.log(this.data);
 
   }
 

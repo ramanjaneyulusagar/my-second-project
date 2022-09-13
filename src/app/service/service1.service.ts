@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import{map} from 'rxjs/operators'
-import dataa from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/customers.json';
-import data1a from '/C:/Users/Admin/angular001/my-first-project/src/assets/customerdetails/states.json';
 interface customer1{
   _id:String,
   id: Number,

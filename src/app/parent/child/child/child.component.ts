@@ -17,6 +17,7 @@ comment='hello world';
 children : child1 = {
   noOfchildren: 0,
   //noOfparent: 2
+
 };
   ngOnInit(): void {
 

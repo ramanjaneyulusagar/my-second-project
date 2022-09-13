@@ -8,14 +8,14 @@ import { ListView1Component } from '../../list-view1/list-view1.component';
 })
 export class OnclickcustomerdataComponent implements OnInit {
   names: any;
-  constructor(private routeto: ActivatedRoute) { }
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.routeto.queryParams.subscribe(((paramdata: any) => {
-      this.names = paramdata
-      sessionStorage.setItem("name", paramdata);
-    }))
-    console.log(this.names)
+    this.router.queryParams.subscribe((paramdata: any) => {
+      this.names = JSON.parse(paramdata.singlecustomer)
+      console.log(paramdata)
+      //sessionStorage.setItem("name", paramdata);
+    })
   }
   @ViewChild(ListView1Component) variable!: ListView1Component;
   center: google.maps.LatLngLiteral = { lat: 24, lng: 12 };

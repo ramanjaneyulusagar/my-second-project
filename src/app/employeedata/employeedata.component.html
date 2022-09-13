@@ -2,15 +2,18 @@
 <div>
     <h1>fetching the emploee data</h1>
 
-    <table style="border:2px solid black;">
+    <table class="table">
+      
         <thead>
+            <tr>
             <th>useid</th>
             <th>id</th>
             <th>title</th>
             <th>body</th>
+        </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let employeedata of students " style="border:2px solid blue;">
+            <tr *ngFor="let employeedata of students ">
                 <td>{{employeedata.userId}}</td>
                 <td>{{employeedata.id}}</td>
                 <td>{{employeedata.title}}</td>

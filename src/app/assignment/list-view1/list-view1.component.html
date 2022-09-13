@@ -31,7 +31,7 @@
 
     </thead>
     <tbody style="font-size: 15px;">
-        <tr ngApp *ngFor="let customer of custom|filter:sear|paginate: { itemsPerPage: 12, currentPage: p }"
+        <tr ngApp *ngFor="let customer of customers|filter:sear|paginate: { itemsPerPage: 12, currentPage: p }"
             style="border:2px solid none;">
 
             <td *ngIf="customer.gender==='male'">

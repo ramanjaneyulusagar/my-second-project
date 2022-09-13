@@ -36,7 +36,9 @@ const routes: Routes = [
   { path: 'Parent', component: ParentComponent, },
   { path: 'Child', component: ChildComponent },
   { path: 'ListView1', component: ListView1Component },
-  { path: 'Onclickcustomerdata', component: OnclickcustomerdataComponent },
+  { path: 'Onclickcustomerdata', component: OnclickcustomerdataComponent,
+
+ },
 ];
 
 @NgModule({
