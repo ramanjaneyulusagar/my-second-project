@@ -15,7 +15,7 @@ import { ChildComponent } from './parent/child/child/child.component';
 import { OnclickcustomerdataComponent } from './assignment/new-customer1/onclickcustomerdata/onclickcustomerdata.component';
 
 const routes: Routes = [
- // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+ { path: '', redirectTo: 'CardView1', pathMatch: 'full' },
   { path: 'Assignment1', component: Assignment1Component },
   { path: 'Employeedata', component: EmployeedataComponent },
   { path: 'CardView1', component: CardView1Component },
