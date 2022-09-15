@@ -30,7 +30,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { OnclickcustomerdataComponent } from './assignment/new-customer1/onclickcustomerdata/onclickcustomerdata.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Header2Component } from './assignment/header2/header2.component';
-
+import { TemplateLoginFormComponent } from './assignment/template-login-form/template-login-form.component';
+import { AuthserviceService } from './assignment/authservice.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,7 @@ import { Header2Component } from './assignment/header2/header2.component';
     ChildComponent,
     OnclickcustomerdataComponent,
     Header2Component,
+    TemplateLoginFormComponent,
   ],
 
   imports: [
