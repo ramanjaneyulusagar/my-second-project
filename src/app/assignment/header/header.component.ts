@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import { AuthserviceService } from '../authservice.service';
 import { faFilm, faPeopleGroup, faUser, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-header',
@@ -15,9 +15,14 @@ export class HeaderComponent implements OnInit {
   faUser = faUser;
   f: string = '';
   sear: string = '';
-  constructor() { }
+  login=true;
+  constructor( private router:Router,private authservice:AuthserviceService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    if(this.authservice.isAuthenticate){
+      this.login=false
+    } 
+    else{this.login=true}
   }
 
 }

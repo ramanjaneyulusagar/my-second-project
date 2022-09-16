@@ -16,14 +16,14 @@ import { OnclickcustomerdataComponent } from './assignment/new-customer1/onclick
 import { TemplateLoginFormComponent } from './assignment/template-login-form/template-login-form.component';
 import { AuthguardGuard } from './assignment/authguard.guard';
 const routes: Routes = [
- // { path: '', redirectTo: 'CardView1', pathMatch: 'full' },
-  { path: '', component:LoginAComponent,pathMatch: 'full' },
+// { path: '', redirectTo: 'CardView1', pathMatch: 'full' },
+  { path: '', redirectTo: '/LoginA', pathMatch: 'full' },
   { path: 'Assignment1', component: Assignment1Component,canActivate: [AuthguardGuard] },
   { path: 'Employeedata', component: EmployeedataComponent,canActivate: [AuthguardGuard] },
   { path: 'CardView1', component: CardView1Component ,canActivate: [AuthguardGuard]},
   { path: 'MapView', component: MapViewComponent ,canActivate: [AuthguardGuard]},
   { path: 'AboutA', component: AboutAComponent ,canActivate: [AuthguardGuard]},
-  { path: 'LoginA', component: LoginAComponent ,canActivate: [AuthguardGuard]},
+  { path: 'LoginA', component: LoginAComponent,canActivate: [AuthguardGuard]  },
   { path: 'CustomersOrders1', component: CustomersOrders1Component ,canActivate: [AuthguardGuard]},
   { path: 'Header1 ', component: Header1Component,canActivate: [AuthguardGuard] },
   { path: 'Header', component: HeaderComponent ,canActivate: [AuthguardGuard]},
@@ -31,9 +31,10 @@ const routes: Routes = [
   { path: 'Child', component: ChildComponent ,canActivate: [AuthguardGuard]},
   { path: 'ListView1', component: ListView1Component,canActivate: [AuthguardGuard] },
   { path: 'Onclickcustomerdata', component: OnclickcustomerdataComponent ,canActivate: [AuthguardGuard]},
-  { path: 'TemplateLoginForm', component: TemplateLoginFormComponent,canActivate: [AuthguardGuard] }
+  { path: 'TemplateLoginForm', component: TemplateLoginFormComponent,canActivate: [AuthguardGuard] },
+ { path : '**' , redirectTo : '/LoginA' , pathMatch : 'full'}
 ];
-  //{ path : '**' , redirectTo : '' , pathMatch : 'full'}
+  
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

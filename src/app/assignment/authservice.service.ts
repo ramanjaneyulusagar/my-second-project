@@ -7,13 +7,14 @@ export class AuthserviceService {
 
   constructor() { }
 
-  isAuthenticate: boolean = false;
+  isAuthenticate: boolean = true;
 
   login(email: string, password: string): Observable<boolean> {
-    if (email === 'admin@gmail.com' && password === 'admin') {
+    if (email === 'ad' && password === 'add') {
       this.isAuthenticate = true;
       return of(true);
     }
+    
     return of(false);
   }
 

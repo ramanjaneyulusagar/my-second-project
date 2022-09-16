@@ -36,24 +36,28 @@ export class LoginAComponent implements OnInit {
     this.form = this.fb.group({
       
       email: new FormControl('',Validators.compose([
-        Validators.minLength(8),
-        Validators.maxLength(20),
-        Validators.required,Validators.email
+        //Validators.minLength(2),
+       // Validators.maxLength(20),
+        //Validators.required,Validators.email
       ])),
       password: new FormControl('', [Validators.required]),
     });
   }
   onSubmit() {
-    this.authService
+      this.authService
       .login(this.form.value.email, this.form.value.password)
       .subscribe((data) => {
         if (data) {
-          this.router.navigate(['/CardView1']);  // If valid and route to card
+          this.router.navigate(['/CardView1'] ) ;  // If valid and route to card
         }
+        else{
+          
         this.isSubmitted = true;
         this.isValidUser = data; // false show error message
+        }
       });
   }
+
 
  
 }

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1e7ddb;">
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1e7ddb; width: auto;">
     <span>
       <img class="image" src="./assets/images/people.png" />
     </span>
@@ -24,13 +24,16 @@
             <a aria-current="page" routerLinkActive="active" routerLink="/ListView1">Customers</a>
           </li>
           <li>
-            <a aria-current="page" routerLink="CustomersDetails1" routerLinkActive="active">Orders</a>
+            <a aria-current="page" routerLink="/CustomersOrders1" routerLinkActive="active">Orders</a>
           </li>
           <li>
-            <a aria-current="page" routerLink="AboutA" routerLinkActive="active">About</a>
+            <a aria-current="page" routerLink="/AboutA" routerLinkActive="active">About</a>
           </li>
-          <li>
+          <li *ngIf="login===true">
             <a aria-current="page" routerLink="/LoginA" routerLinkActive="active">Login</a>
+          </li>
+          <li *ngIf="login===false">
+            <a aria-current="page" routerLink="/LoginA" routerLinkActive="active">LogOut</a>
           </li>
         </ul>
       </div>

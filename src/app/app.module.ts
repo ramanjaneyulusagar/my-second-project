@@ -31,7 +31,10 @@ import { OnclickcustomerdataComponent } from './assignment/new-customer1/onclick
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Header2Component } from './assignment/header2/header2.component';
 import { TemplateLoginFormComponent } from './assignment/template-login-form/template-login-form.component';
-import { AuthserviceService } from './assignment/authservice.service';
+import { AuthguardGuard } from './assignment/authguard.guard';
+//import { AuthserviceService } from './assignment/authservice.service';
+//import { MatSliderModule } from '@angular/material/slider';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,9 +61,10 @@ import { AuthserviceService } from './assignment/authservice.service';
     BrowserModule,
     NgbModule, HttpClientModule, NgxPaginationModule, GoogleMapsModule,
     AppRoutingModule,
-    FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule, MatFormFieldModule
+    FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule, MatFormFieldModule,
+    //MatSliderModule
   ],
-  providers: [FormBuilder],
+  providers: [FormBuilder,{provide:AuthenticatorAssertionResponse}],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

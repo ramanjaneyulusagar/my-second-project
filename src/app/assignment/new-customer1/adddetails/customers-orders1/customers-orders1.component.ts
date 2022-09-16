@@ -32,7 +32,7 @@ export class CustomersOrders1Component implements OnInit {
   sear: string = '';
   constructor(private activatedRoute: ActivatedRoute) { }
   data: any
-  name = sessionStorage.getItem("name");
+  //name = sessionStorage.getItem("name");
   @ViewChild(ListView1Component) userdata!: ListView1Component;
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(((paramdata: any) => {
