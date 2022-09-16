@@ -23,7 +23,7 @@ export class Header1Component implements OnInit {
   sear: string = '';
   activeTab = 0;
   login=false;
-  constructor(private router: Router, private authservice:AuthserviceService,private guard:AuthguardGuard ,private loog:LoginAComponent) { }
+  constructor(private router: Router, private authservice:AuthserviceService,private guard:AuthguardGuard ) { }
 
   ngOnInit() {
 if(this.authservice.isAuthenticate){
@@ -33,7 +33,7 @@ else{this.login=true}
   }
   logout(){
   
-      this.router.navigate(['']);
+      this.router.navigate(['/LoginA']);
     
 }
 

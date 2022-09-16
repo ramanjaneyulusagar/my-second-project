@@ -57,9 +57,6 @@ export class LoginAComponent implements OnInit {
         }
       });
   }
-
-
- 
 }
  // account_validation_messages = {
   //   'username': [

@@ -62,9 +62,9 @@ import { AuthguardGuard } from './assignment/authguard.guard';
     NgbModule, HttpClientModule, NgxPaginationModule, GoogleMapsModule,
     AppRoutingModule,
     FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule, MatFormFieldModule,
-    //MatSliderModule
+   // MatSliderModule
   ],
-  providers: [FormBuilder,{provide:AuthenticatorAssertionResponse}],
+  providers: [FormBuilder],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
