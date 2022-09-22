@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'CardView1', component: CardView1Component ,canActivate: [AuthguardGuard]},
   { path: 'MapView', component: MapViewComponent ,canActivate: [AuthguardGuard]},
   { path: 'AboutA', component: AboutAComponent ,canActivate: [AuthguardGuard]},
-  { path: 'LoginA', component: LoginAComponent,canActivate: [AuthguardGuard]  },
+  { path: 'LoginA', component: LoginAComponent },
   { path: 'CustomersOrders1', component: CustomersOrders1Component ,canActivate: [AuthguardGuard]},
   { path: 'Header1 ', component: Header1Component,canActivate: [AuthguardGuard] },
   { path: 'Header', component: HeaderComponent ,canActivate: [AuthguardGuard]},

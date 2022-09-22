@@ -1,22 +1,25 @@
 <app-header></app-header>
 <app-header2></app-header2>
-<ng-template [ngIf]="data">
+<ng-template [ngIf]="'customer.valid'">
     <div>
 
-        <div>
-            <h1>Orders for {{data?.firstName}} {{data?.lastName}}</h1>
+        <div >
+            <h1>Orders for {{customer?.firstName}} {{customer?.lastName}}</h1>
         </div>
         <div>
             <table>
-                <tr>{{data?.state.name}}
+                <tr>{{customer?.state?.name}}
                    
                 </tr>
                 <tr>
-                    <td *ngFor="let order of data.orders">
-                        {{order.productName}}
+                    <td *ngFor="let order of customer?.orders">
+                        {{order?.productName}}
                     </td>
                 </tr>
             </table>
         </div>
     </div>
 </ng-template>
+
+
+    
