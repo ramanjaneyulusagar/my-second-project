@@ -6,25 +6,33 @@ import db from 'src/app/server/db.json';
   providedIn: 'root'
 })
 export class AuthserviceService {
-  logout() {
-    this.route.navigate(['']);
-    //localStorage.removeItem('user');
 
-    //throw new Error('Method not implemented.');
-  }
 
-  constructor(private route:Router,private authservice:AuthserviceService) { }
+  constructor(private route: Router, private authservice: AuthserviceService) { }
 
-  isAuthenticate: boolean = true;
-
-  login(email: string, password: string): Observable<boolean> {
-    if (email === 'ad' && password === 'add') {
-      this.isAuthenticate = true;
-      return of(true);
-      
+  login(email: string, password: string) {
+    if (email == "aaaaaa" && password == "aaaaaa") {
+      localStorage.setItem('currentuser', 'loggedin');
+      return true;
     }
-    
-    return of(false);
+    return false
   }
+  logout(){
+    localStorage.removeItem('currentuser');
+  }
+public get loggedin():boolean{
+  return (localStorage.getItem('currentuser')!==null);
+}
+  // isAuthenticate: boolean = true;
+
+  // login(email: string, password: string): Observable<boolean> {
+  //   if (email === 'ad' && password === 'add') {
+  //     this.isAuthenticate = true;
+  //     return of(true);
+
+  //   }
+
+  //   return of(false);
+  // }
 
 }

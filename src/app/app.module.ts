@@ -20,18 +20,17 @@ import { ListView1Component } from './assignment/list-view1/list-view1.component
 import { CardView1Component } from './assignment/card-view1/card-view1.component';
 import { MapViewComponent } from './assignment/map-view/map-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CustomersOrders1Component } from './assignment/new-customer1/adddetails/customers-orders1/customers-orders1.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Header1Component } from './assignment/header1/header1.component';
 import { HeaderComponent } from './assignment/header/header.component';
 import { ParentComponent } from './parent/child/parent/parent.component';
 import { ChildComponent } from './parent/child/child/child.component';
 import { AppRoutingModule } from './app-routing.module';
-import { OnclickcustomerdataComponent } from './assignment/new-customer1/onclickcustomerdata/onclickcustomerdata.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { Header2Component } from './assignment/header2/header2.component';
 import { TemplateLoginFormComponent } from './assignment/template-login-form/template-login-form.component';
 import { AuthguardGuard } from './assignment/authguard.guard';
+import { TogglebarComponent } from './assignment/togglebar/togglebar.component';
+import { Togglebar1Component } from './assignment/togglebar1/togglebar1.component';
 //import { AuthserviceService } from './assignment/authservice.service';
 //import { MatSliderModule } from '@angular/material/slider';
 
@@ -47,14 +46,13 @@ import { AuthguardGuard } from './assignment/authguard.guard';
     ListView1Component,
     CardView1Component,
     MapViewComponent,
-    CustomersOrders1Component,
     Header1Component,
     HeaderComponent,
     ParentComponent,
     ChildComponent,
-    OnclickcustomerdataComponent,
-    Header2Component,
     TemplateLoginFormComponent,
+    TogglebarComponent,
+    Togglebar1Component,
   ],
 
   imports: [

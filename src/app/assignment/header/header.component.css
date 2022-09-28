@@ -30,7 +30,18 @@ a {
   font-weight: bold;
 }
 
-img,
+.image,
 a {
   margin-left: 30px;
+}
+.image:hover{
+ 
+background-color: #d8dadc;
+border-radius: 18px;
+border: solid  #000000 1px ;
+
+}
+a:hover{
+
+  text-shadow: #111211 2px 2px 2px ;
 }

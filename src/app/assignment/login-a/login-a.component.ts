@@ -28,7 +28,7 @@ export class LoginAComponent implements OnInit {
   isSubmitted: boolean = false;
   isValidUser: boolean = false;
   form: FormGroup = new FormGroup({});  
- 
+ loginvalue:boolean=true
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthserviceService) { }
 
   ngOnInit() {
@@ -36,26 +36,41 @@ export class LoginAComponent implements OnInit {
     this.form = this.fb.group({
       
       email: new FormControl('',Validators.compose([
-        //Validators.minLength(2),
-       // Validators.maxLength(20),
-        //Validators.required,Validators.email
+        Validators.minLength(5),
+        Validators.maxLength(20),
+       // Validators.required,Validators.required
       ])),
-      password: new FormControl('', [Validators.required]),
+      password: new FormControl('', Validators.compose([
+        Validators.minLength(5),
+        Validators.maxLength(20),
+       // Validators.required,Validators.required
+      ])),
     });
   }
-  onSubmit() {
-      this.authService
-      .login(this.form.value.email, this.form.value.password)
-      .subscribe((data) => {
-        if (data) {
-          this.router.navigate(['/CardView1'] ) ;  // If valid and route to card
-        }
-        else{
-          
+  onSubmit() :void{
+    if(this.form.value.email !=''&& this.form.value.password !=''){
+      if(this.authService.login(this.form.value.email,this.form.value.password)){
+        this.router.navigate(['/ListView1'] ) ; 
+
+      }
+      else
+      {
         this.isSubmitted = true;
-        this.isValidUser = data; // false show error message
-        }
-      });
+      }
+    }
+      // this.authService
+      // .login(this.form.value.email, this.form.value.password)
+      // .subscribe((data) => {
+      //   if (data) {
+      //     this.router.navigate(['/CardView1'] ) ;  // If valid and route to card
+        
+      //   }
+      //   else{
+      //   this.isSubmitted = true;
+      //   this.isValidUser = data; 
+      //   // false show error message
+      //   }
+      // });
   }
 }
  // account_validation_messages = {

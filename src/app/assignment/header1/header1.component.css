@@ -43,3 +43,14 @@ a {
   margin-left: 10px;
   font-weight: 400;
 }
+a:hover{
+
+  text-shadow: #111211 2px 2px 2px ;
+}
+.image:hover{
+ 
+  background-color: #d8dadc;
+  border-radius: 18px;
+  border: solid  #000000 1px ;
+  
+  }

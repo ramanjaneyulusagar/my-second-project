@@ -30,7 +30,7 @@ latitude:number,longitude:number
 })
 
 export class Service1Service {
-
+  url='assets/customerdetails/customers.json';
   constructor(private http:HttpClient) { }
   Wcount(count:Number)
   {
@@ -40,6 +40,11 @@ export class Service1Service {
  getTodo()
 {
  return this.http.get('https://jsonplaceholder.typicode.com/posts')
+
+} 
+getTodo1()
+{
+ return this.http.get(this.url);
 
 } 
 

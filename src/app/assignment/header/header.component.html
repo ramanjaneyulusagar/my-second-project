@@ -16,7 +16,7 @@
     </span>
     <div class="container-fluid ">
 
-      <a routerLinkActive="active" routerLink="/Customer1">Customer Manager</a>
+      <a  style="color: white;" (click)="refreshpage()">Customer Manager</a>
 
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-9 ">
@@ -24,16 +24,14 @@
             <a aria-current="page" routerLinkActive="active" routerLink="/ListView1">Customers</a>
           </li>
           <li>
-            <a aria-current="page" routerLink="/CustomersOrders1" routerLinkActive="active">Orders</a>
+            <a aria-current="page" routerLink="/" routerLinkActive="active">Orders</a>
           </li>
           <li>
             <a aria-current="page" routerLink="/AboutA" routerLinkActive="active">About</a>
           </li>
-          <li *ngIf="login===true">
-            <a aria-current="page" routerLink="/LoginA" routerLinkActive="active">Login</a>
-          </li>
-          <li *ngIf="login===false">
-            <a aria-current="page" routerLink="/LoginA" routerLinkActive="active">LogOut</a>
+
+          <li>
+            <a aria-current="page" (click)="logout()" style="color: white;">LogOut</a>
           </li>
         </ul>
       </div>

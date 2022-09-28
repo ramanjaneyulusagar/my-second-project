@@ -1,0 +1,118 @@
+<app-header></app-header>
+<style>
+    #icon {
+        margin: 10px;
+        margin-left: 35px;
+        margin-top: 20px;
+    }
+
+    .ics {
+        color: rgb(51, 49, 49);
+        font-size: 25px;
+        margin-left: 10px;
+    }
+</style>
+
+<div id="icon">
+
+    <fa-icon [icon]="faUser" style="font-size: 30px;"></fa-icon>
+    <span class="ics"> Customers Information</span>
+</div>
+
+<div class="container" style="margin-top:20px ;">
+    <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+
+            <div #mydiv>
+                <button #bt type="button" class="btn " style="margin-left: 10px ;color: gray;" (click)="CD()"
+                    aria-pressed="true" data-toggle="button">
+                    <fa-icon [icon]="faList" style="font-size: 20px;margin-right: 10px;"></fa-icon> CustomerDetails
+                </button>
+                <button #bt1 type="button" class="btn" style="margin-left: 10px ;color: black;" (click)="CO()"
+                    aria-pressed="true" data-toggle="button">
+                    <fa-icon [icon]="faTags" style="font-size: 20px;margin-right: 10px;"></fa-icon>
+                    CustomerOrders
+                </button>
+                <button #bt2 type="button" class="btn" style="margin-left: 10px ;color: gray;" (click)="ED()"
+                    aria-pressed="true" data-toggle="button">
+
+
+                    <fa-icon [icon]="faPenSquare" style="font-size: 20px;margin-right: 10px;"></fa-icon>EditCusomer
+                </button>
+            </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2"
+            aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+
+
+    <div [hidden]="hidefile1">
+        <ng-template [ngIf]="'names'">
+
+            <div style="display:inline-flex; margin: 30px;">
+                <div>
+                    <img *ngIf="names?.gender==='male'" src="./assets/images/male.png" width="90px"
+                        style="float: left;padding-right: 10px;" />
+                    <img *ngIf="names?.gender==='female'" src="./assets/images/female.png" width="90px"
+                        style="float: left;padding-right: 10px" />
+                </div>
+                <div style="margin-left: 70px;">
+                    <span>
+                        <h2>{{names?.firstName|titlecase}} {{names?.lastName|titlecase}}</h2>
+                    </span>
+                    <span>{{names?.address}}</span><br />
+                    <span>{{names?.city}} , {{names?.state?.name}}</span><br />
+
+                </div>
+            </div>
+
+        </ng-template>
+    </div>
+
+
+    <div [hidden]="hidefile2">
+        <ng-template [ngIf]="'customer.valid'">
+
+
+
+
+            <div>
+
+                <div style="margin: 20px;">
+                    <table class="table table-striped ">
+
+                        <tbody>
+                            <tr></tr>
+                            <h1>Orders for {{names?.firstName}} {{names?.lastName}}</h1>
+                            <tr></tr>
+                            <tr *ngFor="let order of names?.orders">
+                                <td>
+                                    {{order.productName}}
+                                </td>
+                                <td>
+                                    {{order.itemCost}}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    {{names.cost|number}}
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
+
+    <div [hidden]="hidefile3">
+
+    </div>

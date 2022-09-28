@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import data from 'C:/angularAssignment/my-second-project/src/assets/customerdetails/customers.json'
+import data from '/src/assets/customerdetails/customers.json'
 interface customer1 {
   _id: String,
   id: Number,
@@ -31,13 +31,14 @@ interface customer {
 })
 export class ListView1Component implements OnInit {
   constructor(private http: HttpClient, private route: Router) { };
-  customers = data;
+  customers: any[] = data
+  url = 'assets/customerdetails/customers.json';
 
   sear: string = '';
   p: number = 1;
   total: number = 0;
   ngOnInit(): void {
-  
+
     this.customers.map((c: any) => {
       c['cost'] = 0.0
       if (c?.orders) {
@@ -51,7 +52,7 @@ export class ListView1Component implements OnInit {
 
   routeToViewOrder(data: any) {
     console.log(data)
-    this.route.navigate(['CustomersOrders1'],
+    this.route.navigate(['Togglebar1'],
       {
         queryParams: {
           data: JSON.stringify(data)
@@ -60,16 +61,16 @@ export class ListView1Component implements OnInit {
       });
   }
 
-  routeToCustomerDetails(singlecustomer: any) {
+  routeToCustomerDetails(data: any) {
     //debugger;
-    this.route.navigate(['Onclickcustomerdata'],
+    this.route.navigate(['Togglebar'],
       {
         queryParams: {
-          singlecustomer: JSON.stringify(singlecustomer)
+          data: JSON.stringify(data)
 
         }
 
       });
-    console.log(singlecustomer)
+    console.log(data)
   }
 };
