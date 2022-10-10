@@ -1,3 +1,97 @@
 <app-header></app-header>
-<h1>welcome to customer page</h1>
+
+<div class="container" style="width: 500px;margin-top:20px;">
+  <select 
+    [(ngModel)]="l.gender"
+    class="form-control">
+    <option value="all">Filter by gender</option>
+    <option value="male">M</option>
+    <option value="female">F</option>
+  </select>
+
+</div>
+
+
+<b style="float: right;margin-bottom: 5px;"><label class="button1" style="font-weight:lighter;margin-left: 20px;">Filter
+  :</label>
+<input type="text" placeholder="search" [(ngModel)]="sear"
+  style="margin-right: 32px;border:solid 1px black;border-radius:2;" />
+</b>
+<br /><br />
+<table #table class="table table-striped" >
+<thead>
+  <tr>
+      <th></th>
+      <th>FirstName</th>
+      <th>Lastname</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>OrderTotal</th>
+      <th></th>
+  </tr>
+
+</thead>
+<tbody style="font-size: 15px;">
+  <tr ngApp *ngFor="let customer of userdata|filter:sear|filter2:l.gender|paginate: { itemsPerPage: 5, currentPage: p }"
+      style="border:2px solid none;">
+
+      <td *ngIf="customer.gender==='male'">
+          <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="60px"
+              style="float: left;padding-right: 10px;" />
+
+      </td>
+      <td *ngIf="customer.gender==='female'">
+          <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="60px"
+              style="float: left;padding-right: 10px" />
+      </td>
+
+
+
+      <td [routerLink]="['/Togglebar',customer.id]" style="cursor: pointer;color: rgb(61, 61, 180);">
+          {{customer.firstName}}</td>
+      <td>{{customer.lastName}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.city}}</td>
+      <td >{{customer.state.name}}</td>
+      <td>{{customer.cost|number}}</td>
+      <td [routerLink]="['/Togglebar1',customer.id]" style="cursor: pointer;color: rgb(61, 61, 180);">view orders
+      </td>
+
+  </tr>
+</tbody>
+
+</table>
+
+<pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
+
+
+
+<!-- <h1>welcome to customer page</h1>
 <img src="./assets/images/Customers_Part_of_Company_Blog.png" width="500px" />
+
+<div>
+    hello
+    <ul *ngFor="let d of user">
+<li>{{d.email}}</li>
+<li>{{d.password}}</li>
+
+    </ul>
+</div>
+<form>
+    
+    <div class="form-outline mb-4">
+      <input type="text" id="form2Example1" class="form-control" name="email" [(ngModel)]="formdata.email" />
+      <label class="form-label" for="form2Example1">Email address</label>
+    </div>
+  
+   
+    <div class="form-outline mb-4">
+      <input type="text" id="form2Example2" class="form-control" name="password" [(ngModel)]="formdata.password" />
+      <label class="form-label" for="form2Example2">Password</label>
+    </div>
+  
+    <button type="button" class="btn btn-primary btn-block mb-4" (click)="createdata()">Sign in</button>
+  
+  </form> -->
+

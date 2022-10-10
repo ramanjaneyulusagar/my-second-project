@@ -19,5 +19,5 @@ body
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html, body { height: max-content; }
+html, body { width: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

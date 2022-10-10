@@ -1,0 +1,51 @@
+<div style="margin: 20px;">
+    <button class="btn btn-primary" (click)="goback()">back</button>
+    <b style="float: right;margin-bottom: 5px;"><label class="button1"
+            style="font-weight:lighter;margin-left: 20px;">Filter
+            :</label>
+        <input type="text" placeholder="search" [(ngModel)]="sear"
+            style="margin-right:100px;border:solid 1px black;border-radius: 2;" />
+    </b>
+    <br />
+</div>
+<div style="margin-left:130px;align-items: center;width:1000px">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th scope="col">CustomerName</th>
+                <th scope="col">Orders</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of userdata|filter:sear|paginate: { itemsPerPage: 8, currentPage: p }"
+                style="border:2px solid none;">
+                <td *ngIf="order.gender==='male'">
+                    <img *ngIf="order.gender==='male'" src="./assets/images/male.png" width="60px"
+                        style="float: left;padding-right: 10px;" />
+
+                </td>
+                <td *ngIf="order.gender==='female'">
+                    <img *ngIf="order.gender==='female'" src="./assets/images/female.png" width="60px"
+                        style="float: left;padding-right: 10px" />
+                </td>
+
+                <td [routerLink]="['/Togglebar',order.id]" style="cursor: pointer;color: rgb(61, 61, 180);"> 
+                    {{ order.firstName }} {{order.lastName}}
+                </td>
+
+                <td>
+                    <ul *ngFor="let o of order.orders">
+                        <li [routerLink]="['/Togglebar1',order.id]" style="cursor: pointer;color: rgb(61, 61, 180);"> {{
+                            o.productName}} </li>
+                    </ul>
+                </td>
+
+
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
+
+</div>

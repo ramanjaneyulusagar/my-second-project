@@ -16,22 +16,15 @@ export class HeaderComponent implements OnInit {
   f: string = '';
   sear: string = '';
   login = true;
-  constructor(private router: Router, private authservice: AuthserviceService) { }
-
+  constructor(private router: Router,
+    private authservice: AuthserviceService) { }
   ngOnInit() {
-    // setTimeout(()=>{
-    //   window.location.reload();
-    // }, 100);
-    // if(this.authservice.isAuthenticate){
-    //   this.login=false
-    // } 
-    // else{this.login=true}
   }
   logout() {
     this.authservice.logout();
     this.router.navigate(['/LoginA']);
   }
-  refreshpage():void {
+  refreshpage(): void {
     window.location.reload()
   }
 }

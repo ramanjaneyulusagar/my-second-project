@@ -6,10 +6,7 @@ import db from 'src/app/server/db.json';
   providedIn: 'root'
 })
 export class AuthserviceService {
-
-
   constructor(private route: Router, private authservice: AuthserviceService) { }
-
   login(email: string, password: string) {
     if (email == "aaaaaa" && password == "aaaaaa") {
       localStorage.setItem('currentuser', 'loggedin');

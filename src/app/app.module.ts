@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpInterceptor } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { Angular1Component } from './angular1/angular1.component';
 import { EmployeedataComponent } from './employeedata/employeedata.component';
@@ -31,8 +31,18 @@ import { TemplateLoginFormComponent } from './assignment/template-login-form/tem
 import { AuthguardGuard } from './assignment/authguard.guard';
 import { TogglebarComponent } from './assignment/togglebar/togglebar.component';
 import { Togglebar1Component } from './assignment/togglebar1/togglebar1.component';
-//import { AuthserviceService } from './assignment/authservice.service';
-//import { MatSliderModule } from '@angular/material/slider';
+import { NewCustomerComponent } from './assignment/new-customer/new-customer.component';
+import { AuthserviceService } from './assignment/authservice.service';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCommonModule } from '@angular/material/core';
+import { CustomerOrdersComponent } from './assignment/customer-orders/customer-orders.component';
+import { HeaderSectionModule } from './newAssignment/header-section/header-section.module';
+import { EditcustomerComponent } from './assignment/editcustomer/editcustomer.component';
+import { customer } from './assignment/customerdata1';
+import { Togglebar2Component } from './assignment/togglebar2/togglebar2.component';
+import * as xlsx from 'xlsx';
+import { Filter2Pipe } from './assignment/filter2.pipe'
+//import{ filesaver} from 'ngx-filesaver'
 
 @NgModule({
   declarations: [
@@ -53,14 +63,20 @@ import { Togglebar1Component } from './assignment/togglebar1/togglebar1.componen
     TemplateLoginFormComponent,
     TogglebarComponent,
     Togglebar1Component,
+    NewCustomerComponent,
+    CustomerOrdersComponent,
+    EditcustomerComponent,
+    Togglebar2Component,
+    Filter2Pipe
   ],
 
   imports: [
     BrowserModule,
     NgbModule, HttpClientModule, NgxPaginationModule, GoogleMapsModule,
     AppRoutingModule,
-    FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule, MatFormFieldModule,
-   // MatSliderModule
+    FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule, MatFormFieldModule, MatCommonModule
+    // MatSliderModule
+    ,HeaderSectionModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

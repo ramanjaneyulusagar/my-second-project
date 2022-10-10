@@ -22,14 +22,14 @@
 
 
             <div class="col-md-4 col-sm-4 col-xs-12 profile_details menu1"
-              *ngFor="let customer of custom|paginate: { itemsPerPage: 8, currentPage: p }|filter:sear;">
+              *ngFor="let customer of userdata|paginate: { itemsPerPage: 8, currentPage: p }|filter:sear;">
 
               <div class="box-body menu2">
 
                 <div class="menu3">
 
-                  <span class="span1">{{customer.firstName}} {{customer.lastName}}</span>
-                  <fa-icon [icon]="faPenToSquare"></fa-icon>
+                  <span class="span1">{{customer.firstName|titlecase}} {{customer.lastName|titlecase}}</span>
+                  <fa-icon [icon]="faPenToSquare" [routerLink]="['/Togglebar2',customer.id]" ></fa-icon>
 
                 </div>
 
@@ -46,7 +46,7 @@
                     <br />
                     <span>{{customer.state.name}}</span>
                     <br />
-                    <span class="span2">ViewOrders</span>
+                    <span class="span2" [routerLink]="['/Togglebar1',customer.id]">ViewOrders</span>
                     <br />
                   </div>
                   <br />

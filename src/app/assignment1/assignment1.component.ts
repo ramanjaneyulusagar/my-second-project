@@ -1,37 +1,26 @@
 import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-assignment1',
   templateUrl: './assignment1.component.html',
   styleUrls: ['./assignment1.component.css']
 })
 export class Assignment1Component implements OnInit {
-
   constructor() { }
-
   ngOnInit(): void {
   }
   display = '';
   hello(value: any) {
     console.warn(value)
   }
-
   getName(value: any) {
-
-
   }
-
   get(value: any) {
-
-
     console.warn(value)
-
   }
   value1 = 0;
   value(value: String) {
     value === 'add' ? this.value1++ : this.value1--;
-
   }
   name = 'interpolation';
   disable = true

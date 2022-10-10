@@ -8,23 +8,24 @@
 }
 
 .input1 {
-  margin-left: 5px;
+  margin-left: 0px;
   border: solid 1px black;
   border-radius: 2px;
-  margin-right: 25px;
+  margin-right: 70px;
 }
 
 .menu {
   margin-left: 25px;
+  width: 1200px;
 }
 
 .menu1 {
-  width: 310px;
+  width: 300px;
 }
 
 .menu2 {
   border: solid 1px #b4b6b6;
-  margin: 10px;
+  margin-bottom: 15px;
 }
 
 .menu3 {

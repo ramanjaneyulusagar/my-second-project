@@ -16,7 +16,7 @@ export class FilterPipe implements PipeTransform {
       .toLowerCase()
       .includes(f);
     });   
-
+  
 
   }
  }

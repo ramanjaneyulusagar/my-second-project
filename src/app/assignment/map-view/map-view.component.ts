@@ -1,7 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap, MapInfoWindow } from '@angular/google-maps';
-
-
 @Component({
   selector: 'app-map-view',
   templateUrl: './map-view.component.html',
@@ -16,12 +14,10 @@ export class MapViewComponent implements OnInit {
   zoom = 1;
   markerOptions: google.maps.MarkerOptions = { draggable: true };
   markerPositions: google.maps.LatLngLiteral[] = [];
-
   moveMap(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) {
       this.center = (event.latLng.toJSON());
     }
-
   }
   move(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) {
@@ -33,11 +29,7 @@ export class MapViewComponent implements OnInit {
       this.markerPositions.push(event.latLng.toJSON());
     }
   }
-
   constructor() { }
-
   ngOnInit(): void {
-
   }
-
 }

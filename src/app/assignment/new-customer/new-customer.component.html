@@ -1,0 +1,119 @@
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <form #contactForm="ngForm" (ngSubmit)="createdata(contactForm)" invalidate>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="firstName">First Name</label><br />
+                                <input type="text" class="form-control form-control-lg" name="firstName"
+                                    [(ngModel)]="formdata.firstName" #firstname="ngModel" required minlength="5"
+                                    maxlength="20" />
+                                <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)"
+                                    class="error">
+                                    <div *ngIf="firstname.errors">
+                                        First Name is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="lastName">Last Name</label><br />
+                                <input type="text" id="lastName" class="form-control form-control-lg" name="lastName"
+                                    [(ngModel)]="formdata.lastName" />
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example8">Gender</label><br />
+                                    <input type="text" class="form-control form-control-lg" name="gender"
+                                        [(ngModel)]="formdata.gender" />
+                                </div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form3Example8">Address</label><br />
+                                <input type="text" class="form-control form-control-lg" name="address"
+                                    [(ngModel)]="formdata.address" />
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form3Example8">City</label><br />
+                                <input type="text" class="form-control form-control-lg" name="city"
+                                    [(ngModel)]="formdata.city" />
+                            </div>
+                            <div class="row" name="state">
+                                <div class="col-md-6 mb-4" class="form-outline">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="statename">
+                                            statename</label><br />
+                                        <input type="text" class="form-control form-control-lg" name="name"
+                                            [(ngModel)]="formdata.state.name" required="formdata" />
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="stateabbreviation">
+                                            stateabbreviation</label><br />
+                                        <input type="text" class="form-control form-control-lg" name="abbreviation"
+                                            [(ngModel)]="formdata.state.abbreviation" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <h1 class="mb-2 pb-1"> Orders</h1>
+                            <div class="row" name="orders">
+                                <div class="col-md-6 mb-4" class="form-outline" *ngFor="let d of formdata.orders">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="statename">
+                                            productName</label><br />
+                                        <input type="text" class="form-control form-control-lg" name="productName"
+                                            [(ngModel)]="d.productName" />
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="stateabbreviation">
+                                            itemCost</label><br />
+                                        <input type="text" class="form-control form-control-lg" name="itemCost"
+                                            [(ngModel)]="d.itemCost" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="lastName">
+                                    Latitude</label><br />
+                                <input type="text" id="lastName" class="form-control form-control-lg" name="Latitude"
+                                    [(ngModel)]="formdata.latitude" />
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="lastName">
+                                    Longitude</label><br />
+                                <input type="text" id="lastName" class="form-control form-control-lg" name="longitude"
+                                    [(ngModel)]="formdata.longitude" />
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg mb-1"
+                                [disabled]="!contactForm.valid">add
+                                Customer </button>
+                            <p>{{contactForm.valid}} </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 
+
+      ngOnInit(): void {
+    this.router.paramMap.subscribe((param)=>{
+      var id= Number(param.get('id'))
+      this.getbyid(id);
+
+  })
+}
+  getbyid(id:number){
+    this.httpservice.getbyid(id).subscribe((data)=>{
+      this.formdata=data
+    })
+    }
+  //  update(){
+  //   this.httpservice.update(this.formdata).subscribe(()=>{
+  //     this.r.navigate(['/ListView1'])
+  //   })
+  //  }
+ -->

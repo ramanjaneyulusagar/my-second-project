@@ -1,0 +1,84 @@
+#icon {
+    
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.ics {
+    color: rgb(51, 49, 49);
+    font-size: 25px;
+    margin-left: 0px;
+}
+
+.btn {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+th {
+    background-color: #f6f8fa;
+    
+}
+
+th:hover {
+    background-color: blanchedalmond;
+}
+.filter {
+    float: right;
+  }
+  
+  .button1 {
+    font-weight: lighter;
+    margin-right: 0px;
+  }
+  
+  .input1 {
+    margin-left: 0px;
+    border: solid 1px black;
+    border-radius: 2px;
+    margin-right: 70px;
+  }
+  
+  .menu {
+    margin-left: 0px;
+    width: 1200px;
+  }
+  
+  .menu1 {
+    width: 300px;
+  }
+  
+  .menu2 {
+    border: solid 1px #b4b6b6;
+    margin-bottom: 15px;
+  }
+  
+  .menu3 {
+    background-color: #1e7ddb;
+    font-size: medium;
+    color: white;
+    height: 40px;
+  }
+  
+  .menu4 {
+    display: flex;
+  }
+  
+  .span1 {
+    margin-left: 10px;
+  }
+  
+  fa-icon {
+    color: white;
+    margin-right: 10px;
+    
+  }
+  
+  img {
+    float: left;
+    padding-right: 10px;
+  }
+  
+  .span2 {
+    color: #1e7ddb;
+  }

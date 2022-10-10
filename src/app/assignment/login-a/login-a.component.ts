@@ -3,22 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl, FormsModule, NgForm } 
 import { Router } from '@angular/router';
 import data from '/src/assets/customerdetails/customers.json';
 import { AuthserviceService } from 'src/app/assignment/authservice.service';
-interface customer {
-
-  id: string,
-  firstName: string, lastName: string,
-  gender: string,
-  address: string,
-  city: string,
-  state: { abbreviation: string, name: string },
-  orders: [{
-    productName: string
-    itemCost: number
-  }
-  ]
-  ,
-  latitude: number, longitude: number
-}
+import { customer } from '../customerdata1';
 @Component({
   selector: 'app-login-a',
   templateUrl: './login-a.component.html',
