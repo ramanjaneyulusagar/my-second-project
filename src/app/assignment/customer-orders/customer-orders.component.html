@@ -1,37 +1,33 @@
+<app-header></app-header>
 <div style="margin: 20px;">
-    <button class="btn btn-primary" (click)="goback()">back</button>
+    <!-- <button class="btn btn-primary" (click)="goback()">back</button> -->
     <b style="float: right;margin-bottom: 5px;"><label class="button1"
-            style="font-weight:lighter;margin-left: 20px;">Filter
-            :</label>
+            style="font-weight:lighter;margin-left: 0px;">Filter
+            :</label><br />
         <input type="text" placeholder="search" [(ngModel)]="sear"
-            style="margin-right:100px;border:solid 1px black;border-radius: 2;" />
+            style="margin-right:100px;border:solid 1px black;border-radius: 2px;" />
     </b>
     <br />
 </div>
-<div style="margin-left:130px;align-items: center;width:1000px">
+<div style="align-items: center;margin-top: 40px;margin: 20px;">
     <table class="table table-striped">
         <thead>
             <tr>
-                <th></th>
+
+                <th>id</th>
                 <th scope="col">CustomerName</th>
                 <th scope="col">Orders</th>
+                <th>itemCost</th>
+                <th>totalCost</th>
 
             </tr>
         </thead>
-        <tbody>
-            <tr *ngFor="let order of userdata|filter:sear|paginate: { itemsPerPage: 8, currentPage: p }"
-                style="border:2px solid none;">
-                <td *ngIf="order.gender==='male'">
-                    <img *ngIf="order.gender==='male'" src="./assets/images/male.png" width="60px"
-                        style="float: left;padding-right: 10px;" />
+        <tbody *ngFor="let order of userdata|filter:sear|paginate: { itemsPerPage: 8, currentPage: p }">
 
-                </td>
-                <td *ngIf="order.gender==='female'">
-                    <img *ngIf="order.gender==='female'" src="./assets/images/female.png" width="60px"
-                        style="float: left;padding-right: 10px" />
-                </td>
+            <tr style="border:2px solid none;">
 
-                <td [routerLink]="['/Togglebar',order.id]" style="cursor: pointer;color: rgb(61, 61, 180);"> 
+                <td>{{order.id}}</td>
+                <td [routerLink]="['/Togglebar',order.id]" style="cursor: pointer;color: rgb(61, 61, 180);">
                     {{ order.firstName }} {{order.lastName}}
                 </td>
 
@@ -41,11 +37,20 @@
                             o.productName}} </li>
                     </ul>
                 </td>
+                <td>
+                    <ul *ngFor="let o of order.orders">
+                        <li>{{o.itemCost}}</li>
+                    </ul>
+                </td>
 
+                <td>{{order.cost|number}}</td>
 
             </tr>
+
         </tbody>
+
     </table>
+
     <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
 
 </div>

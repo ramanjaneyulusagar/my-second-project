@@ -23,13 +23,13 @@ li {
 a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .view {
   color: #919191;
   font-size: 16px;
-  font-weight: bold;
+  font-weight:500;
 }
 
 img,
@@ -39,13 +39,13 @@ a {
 
 .ics {
   color: rgb(51, 49, 49);
-  font-size: 25px;
+  font-size: 20px;
   margin-left: 10px;
   font-weight: 400;
 }
 a:hover{
 
-  text-shadow: #111211 2px 2px 2px ;
+  text-shadow: #111211 1px 0px 0px  ;
 }
 .image:hover{
  

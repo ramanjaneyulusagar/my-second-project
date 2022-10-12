@@ -4,6 +4,7 @@ import data from 'C:/angularAssignment/my-second-project/src/assets/customerdeta
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { Service1Service } from 'src/app/service/service1.service';
 import { HttpserviceService } from '../httpservice.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-card-view1',
   templateUrl: './card-view1.component.html',
@@ -15,7 +16,7 @@ export class CardView1Component implements OnInit {
   @ViewChild('sp', { static: false }) sp: any;
   constructor(private http: HttpClient,
     private service: Service1Service,
-    private httpservice: HttpserviceService) { }
+    private httpservice: HttpserviceService, private route: Router) { }
   sear: string = '';
   sear1: string = '';
   p: number = 1;
@@ -29,5 +30,11 @@ export class CardView1Component implements OnInit {
         this.userdata = response;
         console.log(this.userdata)
       })
+  }
+  routeToViewOrder(data: any) {
+    this.route.navigate(['Togglebar1', data])
+  }
+  edit(data: any) {
+    this.route.navigate(['Togglebar2', data])
   }
 }

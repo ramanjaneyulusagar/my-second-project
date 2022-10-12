@@ -39,16 +39,4 @@ export class CustomerOrdersComponent implements OnInit {
   goback() {
     this.route.navigate(['ListView1'])
   }
-  routeToCustomerDetails(data: any) {
-    //debugger;
-    this.route.navigate(['Togglebar'],
-      {
-        queryParams: {
-          data: JSON.stringify(data),
-
-        }
-
-      }
-    );
-  }
 }

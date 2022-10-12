@@ -5,12 +5,12 @@ export interface customer {
     address: string,
     city: string,
     state: { abbreviation: string, name: string },
-    orders: [{
+    orders?: [{
         productName: string
         itemCost: null
     }
     ]
     ,
     id?:number,
-    latitude: null, longitude: null
+    latitude?: null, longitude?: null
 }

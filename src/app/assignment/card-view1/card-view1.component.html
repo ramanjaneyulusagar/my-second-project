@@ -1,71 +1,41 @@
 <app-header1></app-header1>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <b class="filter">
-    <label class="button1">Filter </label>
-    <input type="text" placeholder="search" [(ngModel)]="sear" class="input1" />
-  </b><br /><br />
-  <div class="row menu">
-    <div class="col-md-12">
-      <div class="x_panel">
-        <div class="x_content">
-          <div class="row">
-
-
-            <div class="col-md-4 col-sm-4 col-xs-12 profile_details menu1"
-              *ngFor="let customer of userdata|paginate: { itemsPerPage: 8, currentPage: p }|filter:sear;">
-
-              <div class="box-body menu2">
-
-                <div class="menu3">
-
-                  <span class="span1">{{customer.firstName|titlecase}} {{customer.lastName|titlecase}}</span>
-                  <fa-icon [icon]="faPenToSquare" [routerLink]="['/Togglebar2',customer.id]" ></fa-icon>
-
+<b class="filter">
+  <label class="button1">Filter </label>
+  <input type="text" placeholder="search" [(ngModel)]="sear" class="input1" />
+</b><br /><br />
+<div class="row menu">
+  <div class="col-md-12">
+    <div class="x_panel">
+      <div class="x_content">
+        <div class="row">
+          <div class=" menu1"
+            *ngFor="let customer of userdata|paginate: { itemsPerPage: 8, currentPage: p }|filter:sear;">
+            <div class="box-body menu2">
+              <div class="menu3">
+                <span class="span1">{{customer.firstName|titlecase}} {{customer.lastName|titlecase}}</span>
+                <fa-icon [icon]="faPenToSquare" (click)="edit(customer.id)" ></fa-icon>
+              </div>
+              <div class="col-sm-12 menu4">
+                <div style="margin:8px;">
+                  <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px" />
+                  <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px" />
                 </div>
-
-                <div class="col-sm-12 menu4">
-
-                  <div style="margin:8px;">
-
-                    <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="80px" />
-                    <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px" />
-
-                  </div>
-                  <div>
-                    <span>{{customer.city}}</span>
-                    <br />
-                    <span>{{customer.state.name}}</span>
-                    <br />
-                    <span class="span2" [routerLink]="['/Togglebar1',customer.id]">ViewOrders</span>
-                    <br />
-                  </div>
+                <div>
+                  <span>{{customer.city}}</span>
+                  <br />
+                  <span>{{customer.state.name}}</span>
+                  <br />
+                  <span class="span2" (click)="routeToViewOrder(customer.id)">ViewOrders</span>
                   <br />
                 </div>
-
+                <br />
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
     </div>
   </div>
-
-
-  <pagination-controls (pageChange)="p=($event)" class="float-right" style="float: left;"></pagination-controls>
-
-
-</body>
-
-</html>
+</div>
+<pagination-controls (pageChange)="p=($event)" class="float-right" style="float: left;"></pagination-controls>
+<!-- [routerLink]="['/Togglebar2',customer.id]" -->

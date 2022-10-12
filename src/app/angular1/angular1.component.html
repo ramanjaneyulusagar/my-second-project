@@ -1,19 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<!-- <p>childdata</p>
+<h1 style="background-color: cornflowerblue;">@input:{{childdata}}</h1>
+
+<h1 style="background-color: aquamarine;">@viewChild decorator:  <br/>{{variable}}</h1>
+
+
+<hr/>
+
+<h1>passing data from child to parent using output decorator</h1>
+<input   class="form-control"  #name/>
+<button   class="btn btn-primary" (click)="dataevent.emit(name.value)">pass</button>
+<hr/>
+<h1>session manaaegment</h1>
+<h2  style="background-color: rgb(184, 182, 202);">welcome to {{name1}}</h2>
+ <div [hidden]="hidefile">
+    <h1>toggle property</h1>
+  <h2>{{comment}}</h2>
+ </div>
+ <button (click)="toggle()">hide the hello world </button>
+ <div>
+    <h1>directives</h1>
+    <h1 *ngIf="children?.noOfchildren">
+        
+    </h1>
+    {{children.noOfchildren??'no child'}}
+ </div>
+ <div>co</div>
+
+import { Component, OnInit ,Input, Output, EventEmitter} from '@angular/core';
+import { child1 } from '../child1';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
+})
+export class ChildComponent implements OnInit {
+@Input () childdata:any;
+@Output() dataevent=new EventEmitter<any>();
+variable='';
+name1:any;
+hidefile=false;
+comment='hello world';
+  constructor() { }
+children : child1 = {
+  noOfchildren: 0,
+  //noOfparent: 2
+
+};
+  ngOnInit(): void {
+
+//this.name1=sessionStorage.getItem('name');
+this.name1=sessionStorage.getItem!=null?sessionStorage.getItem('name'):'';
+
+  }
+toggle(){
+  this.hidefile=!this.hidefile;
+}
+}
+
+-->
+
+
+<!--    
+    <p>passing data from parent to child</p>
+<input  #input1 type="text"   />
+<input     type="button"  (click)="data(input1.value)" value="add" (click)="function1(input1.value)" />
+<h1 style="background-color: aquamarine;">@output:{{title}}</h1>
     
-</head>
-
-<body>
     
+<a routerLink="/ChildComponent">og</a>
+ <app-child    [childdata]="input1.value"    (dataevent)="update($event)">   </app-child> 
+
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChildComponent } from '../child/child.component';
+
+@Component({
+  selector: 'app-parent',
+  templateUrl: './parent.component.html',
+  styleUrls: ['./parent.component.css']
+})
+export class ParentComponent implements OnInit {
 
 
+    parentdata='';
+    title='hello world';
+    @ViewChild(ChildComponent) variable!:ChildComponent
+  constructor() {  
+      //session Management
+    sessionStorage.setItem("name","kanerika software private limited");
+}
+data(data:any){
+
+  this.parentdata=data;
+}
+function1(data:any){
+this.variable.variable=data;
+
+}
+update(data:any){
+
+  this.title=data;
+}
+  ngOnInit(): void {
+  }
+
+}
 
 
-    
-</body>
-</html>
+-->

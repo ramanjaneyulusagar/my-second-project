@@ -30,11 +30,7 @@ export class TogglebarComponent implements OnInit {
     gender: '',
     address: '',
     city: '',
-    state: { name: '', abbreviation: '' },
-    orders: [{ productName: '', itemCost: null }],
-    latitude: null,
-    longitude: null,
-
+    state: { name: '', abbreviation: '' }
   }
   constructor(private router: ActivatedRoute, private httpservice: HttpserviceService, private route: Router) { }
   @ViewChild(ListView1Component) variable!: ListView1Component
@@ -80,15 +76,4 @@ export class TogglebarComponent implements OnInit {
     })
   }
 }
-// this.router.queryParams.subscribe((paramdata:any) => {
-    //   this.names = JSON.parse(paramdata.data)
-    //   console.log(paramdata)
-    //   console.log(this.names)
-      // this.names.map((c: any) => {
-      //   c['cost'] = 0.0
-      //   if (c?.orders) {
-      //     c.orders.map((o: any) => {
-      //       c['cost'] = c['cost'] + o.itemCost;
-      //     });
-      //   };
-      // })
+

@@ -23,11 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Header1Component } from './assignment/header1/header1.component';
 import { HeaderComponent } from './assignment/header/header.component';
-import { ParentComponent } from './parent/child/parent/parent.component';
-import { ChildComponent } from './parent/child/child/child.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { TemplateLoginFormComponent } from './assignment/template-login-form/template-login-form.component';
 import { AuthguardGuard } from './assignment/authguard.guard';
 import { TogglebarComponent } from './assignment/togglebar/togglebar.component';
 import { Togglebar1Component } from './assignment/togglebar1/togglebar1.component';
@@ -36,13 +33,18 @@ import { AuthserviceService } from './assignment/authservice.service';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCommonModule } from '@angular/material/core';
 import { CustomerOrdersComponent } from './assignment/customer-orders/customer-orders.component';
-import { HeaderSectionModule } from './newAssignment/header-section/header-section.module';
-import { EditcustomerComponent } from './assignment/editcustomer/editcustomer.component';
 import { customer } from './assignment/customerdata1';
 import { Togglebar2Component } from './assignment/togglebar2/togglebar2.component';
 import * as xlsx from 'xlsx';
 import { Filter2Pipe } from './assignment/filter2.pipe'
+import jspdf from 'jspdf'
+import { NgxPrintModule } from 'ngx-print';
+import { SearchComponent } from './assignment/search/search.component';
+import { UserlistComponent } from './assignment/userlist/userlist.component';
+import { UserComponent } from './assignment/user/user.component';
+import { Filter1Pipe } from './assignment/filter1.pipe';
 //import{ filesaver} from 'ngx-filesaver'
+
 
 @NgModule({
   declarations: [
@@ -58,16 +60,16 @@ import { Filter2Pipe } from './assignment/filter2.pipe'
     MapViewComponent,
     Header1Component,
     HeaderComponent,
-    ParentComponent,
-    ChildComponent,
-    TemplateLoginFormComponent,
     TogglebarComponent,
     Togglebar1Component,
     NewCustomerComponent,
     CustomerOrdersComponent,
-    EditcustomerComponent,
     Togglebar2Component,
-    Filter2Pipe
+    Filter2Pipe,
+    SearchComponent,
+    UserlistComponent,
+    UserComponent,
+    Filter1Pipe,
   ],
 
   imports: [
@@ -76,7 +78,7 @@ import { Filter2Pipe } from './assignment/filter2.pipe'
     AppRoutingModule,
     FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule, MatFormFieldModule, MatCommonModule
     // MatSliderModule
-    ,HeaderSectionModule
+    ,NgxPrintModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

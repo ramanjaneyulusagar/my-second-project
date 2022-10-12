@@ -1,95 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<app-header></app-header>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<div style="margin:10px;">
 
-</head>
+  <fa-icon [icon]="faUser" style="font-size: 20px;margin-left: 40px;"></fa-icon>
+  <span class="ics"> Customers</span>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="container-fluid ">
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1e7ddb;">
-    <span>
-      <img class="image" src="./assets/images/people.png" />
-    </span>
-    <div class="container-fluid ">
+    <div class="collapse navbar-collapse " id="navbarSupportedContent1">
+      <ul class="navbar-nav">
+        <li>
 
-      <a   style="color: white;" (click)="refreshpage()">Customer Manager</a>
 
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-9 ">
-          <li>
-            <a aria-current="page" routerLinkActive="active" routerLink="/ListView1">Customers</a>
-          </li>
-          <li>
-            <a aria-current="page" routerLinkActive="active" routerLink="/CustomerOrders">Orders</a>
-          </li>
-          <li>
-            <a aria-current="page" routerLink="/AboutA" routerLinkActive="active">About</a>
-          </li>
-         
-          <li>
-            <a aria-current="page" style="color: white;" (click)="logout()" >LogOut</a>
-          </li>
-        </ul>
-      </div>
+          <a class="view" routerLinkActive="active" routerLink="/ListView1">
+            <fa-icon class="ficon" [icon]="faList" routerLinkActive="active"></fa-icon>ListView
+          </a>
+        </li>
+        <li>
 
+          <a class="view" routerLinkActive="active" routerLink="/CardView1">
+            <fa-icon class="ficon" [icon]="faIdCard" routerLinkActive="active">
+            </fa-icon>CardView
+          </a>
+        </li>
+        <li>
+
+          <a class="view" routerLinkActive="active" routerLink="/MapView">
+            <fa-icon class="ficon" [icon]="faMapLocationDot" routerLinkActive="active">
+            </fa-icon>MapView
+          </a>
+        </li>
+        <li>
+
+          <a class="view" routerLinkActive="active" routerLink="/NewCustomer">
+            <fa-icon class="ficon" [icon]="faPlus" routerLinkActive="active">
+            </fa-icon>NewCustomer
+          </a>
+        </li>
+      </ul>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
-
-  <div style="margin-left: 40px;">
-
-    <fa-icon [icon]="faUser" style="font-size: 32px;"></fa-icon>
-    <span class="ics"> Customers</span>
+    </a>
   </div>
-  <nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="container-fluid ">
-
-      <div class="collapse navbar-collapse " id="navbarSupportedContent1">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-9 ">
-          <li>
-
-
-            <a class="view" routerLinkActive="active" routerLink="/ListView1">
-              <fa-icon class="ficon" [icon]="faList" routerLinkActive="active"></fa-icon>ListView
-            </a>
-          </li>
-          <li>
-
-            <a class="view" routerLinkActive="active" routerLink="/CardView1">
-              <fa-icon class="ficon" [icon]="faIdCard" routerLinkActive="active">
-              </fa-icon>CardView
-            </a>
-          </li>
-          <li>
-
-            <a class="view" routerLinkActive="active" routerLink="/MapView">
-              <fa-icon class="ficon" [icon]="faMapLocationDot" routerLinkActive="active">
-              </fa-icon>MapView
-            </a>
-          </li>
-          <li>
-
-            <a class="view" routerLinkActive="active" routerLink="/NewCustomer">
-              <fa-icon class="ficon" [icon]="faPlus" routerLinkActive="active">
-              </fa-icon>NewCustomer
-            </a>
-          </li>
-        </ul>
-      </div>
-      <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </a>
-    </div>
-  </nav>
-
-</body>
-
-</html>
+</nav>

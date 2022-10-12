@@ -1,58 +1,57 @@
-
-<!-- <button (click)="exportfile()"></button> -->
-
-
-<div >
-    <app-header1></app-header1>
-<b style="float: right;margin-bottom: 5px;"><label class="button1" style="font-weight:lighter;margin-left: 20px;">Filter
+<app-header1></app-header1>
+<b style="float: right;margin-bottom: 5px;"><label class="button1"
+        style="font-weight:lighter;margin-left: 20px;margin-right: 1px;">Filter
         :</label>
-    <input type="text" placeholder="search" [(ngModel)]="sear"
-        style="margin-right: 32px;border:solid 1px black;border-radius:2;" />
+    <input type="text" placeholder="search by" [(ngModel)]="sear"
+        style="margin-right: 20px;border:solid 1px black;border-radius:2;border-radius: 5px;" />
 </b>
-<br /><br />
-<table #table class="table table-striped" >
-    <thead>
-        <tr>
-            <th></th>
-            <th>FirstName</th>
-            <th>Lastname</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>OrderTotal</th>
-            <th></th>
-        </tr>
 
-    </thead>
-    <tbody style="font-size: 15px;">
-        <tr ngApp *ngFor="let customer of userdata|filter:sear|paginate: { itemsPerPage: 5, currentPage: p }"
-            style="border:2px solid none;">
+<div style="margin: 20px;">
+    <table class="table table-striped " style="height:auto;">
+        <thead>
+            <tr>
+                <th></th>
+                <th>FirstName</th>
+                <th>Lastname</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>OrderTotal</th>
+                <th></th>
+            </tr>
 
-            <td *ngIf="customer.gender==='male'">
-                <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="60px"
-                    style="float: left;padding-right: 10px;" />
+        </thead>
+        <tbody style="font-size: 15px;">
+            <tr ngApp *ngFor="let customer of userdata|filter:sear|paginate: { itemsPerPage: 5, currentPage: p }"
+                style="border:2px solid none;">
 
-            </td>
-            <td *ngIf="customer.gender==='female'">
-                <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="60px"
-                    style="float: left;padding-right: 10px" />
-            </td>
+                <td *ngIf="customer.gender==='male'">
+                    <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="60px"
+                        style="float: left;padding-right: 10px;" />
+
+                </td>
+                <td *ngIf="customer.gender==='female'">
+                    <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="60px"
+                        style="float: left;padding-right: 10px" />
+                </td>
 
 
 
-            <td [routerLink]="['/Togglebar',customer.id]" style="cursor: pointer;color: rgb(61, 61, 180);">
-                {{customer.firstName}}</td>
-            <td>{{customer.lastName}}</td>
-            <td>{{customer.address}}</td>
-            <td>{{customer.city}}</td>
-            <td >{{customer.state.name}}</td>
-            <td>{{customer.cost|number}}</td>
-            <td [routerLink]="['/Togglebar1',customer.id]" style="cursor: pointer;color: rgb(61, 61, 180);">view orders
-            </td>
+                <td (click)="routeToCustomerDetails(customer.id)" style="cursor: pointer;color: rgb(61, 61, 180);">
+                    {{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.address}}</td>
+                <td>{{customer.city}}</td>
+                <td>{{customer.state.name}}</td>
+                <td>{{customer.cost|number}}</td>
+                <td (click)="routeToViewOrder(customer.id)" style="cursor: pointer;color: rgb(61, 61, 180);">view
+                    orders
+                </td>
 
-        </tr>
-    </tbody>
+            </tr>
+        </tbody>
 
-</table>
+    </table>
+
+    <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
 </div>
-<pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>

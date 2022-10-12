@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { customer} from '../customerdata1';
+import { customer } from '../customerdata1';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   faFilm, faPeopleGroup, faUser, faPenToSquare,
@@ -17,55 +17,52 @@ export class Togglebar2Component implements OnInit {
   faPenToSquare = faPenToSquare;
   faPeopleGroup = faPeopleGroup;
   faUser = faUser;
-  faList = faList; 
+  faList = faList;
   faPenSquare = faPenSquare;
   faTags = faTags;
-  formdata:customer={
+  formdata: customer = {
     //id: '',
     firstName: '',
     lastName: '',
     gender: '',
     address: '',
     city: '',
-    state:{name: '', abbreviation: '' },
-    orders: [{productName:'',itemCost:null}],
-    latitude: null,
-    longitude: null,
+    state: { name: '', abbreviation: '' }
   }
   active = 3
   id: any;
   data!: ListView1Component;
-  names: any 
-  constructor(private router: ActivatedRoute,private httpservice:HttpserviceService,private route:Router) { }
+  names: any
+  constructor(private router: ActivatedRoute, private httpservice: HttpserviceService, private route: Router) { }
 
   ngOnInit(): void {
-    this.router.paramMap.subscribe((param)=>{
-      var id= Number(param.get('card'))
+    this.router.paramMap.subscribe((param) => {
+      var id = Number(param.get('card'))
       this.getbyid(id)
-      this.names=this.data
+      this.names = this.data
     })
   }
-  getbyid(id:number){
-    this.httpservice.getbyid(id).subscribe((data)=>{
-      console.log("d",data)
-      this.formdata=data
-      this.names=data
+  getbyid(id: number) {
+    this.httpservice.getbyid(id).subscribe((data) => {
+      console.log("d", data)
+      this.formdata = data
+      this.names = data
     })
-    }
-    update() {
-      console.log(this.formdata);
-      this.httpservice.update(this.formdata).subscribe({
-        next: (data) => {
-          alert("data updated")
-          this.route.navigate(['ListView1'])
-        }
-  
-      })
-    }
-    deleted() {
-      this.httpservice.delete(this.formdata).subscribe(data => {
+  }
+  update() {
+    console.log(this.formdata);
+    this.httpservice.update(this.formdata).subscribe({
+      next: (data) => {
+        alert("data updated")
         this.route.navigate(['ListView1'])
-  
-      })
-    }
+      }
+
+    })
+  }
+  deleted() {
+    this.httpservice.delete(this.formdata).subscribe(data => {
+      this.route.navigate(['ListView1'])
+
+    })
+  }
 }

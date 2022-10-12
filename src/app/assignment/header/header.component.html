@@ -1,51 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3486d7;">
+  <span>
+    <img class="image" src="./assets/images/people.png" />
+  </span>
+  <div class="container-fluid ">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
 
-</head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1e7ddb;width: inherit;" >
-    <span>
-      <img class="image" src="./assets/images/people.png" />
-    </span>
-    <div class="container-fluid ">
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li>
+          <a style="color: white;" (click)="refreshpage()">Customer Manager</a>
+        </li>
+        <li>
+          <a aria-current="page" routerLinkActive="active" routerLink="/ListView1">Customers</a>
+        </li>
+        <li>
+          <a aria-current="page" routerLinkActive="active" routerLink="/CustomerOrders">Orders</a>
+        </li>
+        <li>
+          <a aria-current="page" routerLink="/AboutA" routerLinkActive="active">About</a>
+        </li>
 
-      <a style="color: white;" (click)="refreshpage()">Customer Manager</a>
-
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-9 ">
-          <li>
-            <a aria-current="page" routerLinkActive="active" routerLink="/ListView1">Customers</a>
-          </li>
-          <li>
-            <a aria-current="page" routerLinkActive="active" routerLink="/CustomerOrders">Orders</a>
-          </li>
-          <li>
-            <a aria-current="page" routerLink="/AboutA" routerLinkActive="active">About</a>
-          </li>
-
-          <li>
-            <a aria-current="page" (click)="logout()" style="color: white;">LogOut</a>
-          </li>
-        </ul>
-      </div>
-
+        <li>
+          <a aria-current="page" style="color: white;" (click)="logout()">LogOut</a>
+        </li>
+      </ul>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
 
-
-
-
-</body>
-
-</html>
+  </div>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>

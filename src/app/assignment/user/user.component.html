@@ -1,0 +1,67 @@
+<p>user works!</p>
+<div class="container">
+    <br/>
+    <h1>List of Users</h1>
+    <hr/>
+  
+    <app-search (groupFilters)="filters = $event"
+                (autoSearch)="searchText = $event" ></app-search>
+  
+    <br/>
+  
+    <app-userlist [groupFilters]="filters"
+                   [searchByKeyword]="searchText" id="table"></app-userlist>  
+  </div>
+
+  <button (click)="pdf()">generate</button>
+  <button  ngxPrint printSectionId="table" >pdf</button>
+<h1>filtering api data  </h1>
+
+  <input type="text" placeholder="name" [(ngModel)]="text" />
+<button (click)="getbyname(text)" >search</button>
+<app-header></app-header>
+<table class="table table-striped" id="input">
+<thead>
+  <tr>
+      <th></th>
+      <th>FirstName</th>
+      <th>Lastname</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>OrderTotal</th>
+      <th></th>
+  </tr>
+
+</thead>
+<tbody style="font-size: 15px;"  *ngFor="let customer of users">
+  <tr   
+      style="border:2px solid none;">
+
+      <td *ngIf="customer.gender==='male'">
+          <img *ngIf="customer.gender==='male'" src="./assets/images/male.png" width="60px"
+              style="float: left;padding-right: 10px;" />
+
+      </td>
+      <td *ngIf="customer.gender==='female'">
+          <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="60px"
+              style="float: left;padding-right: 10px" />
+      </td>
+
+
+
+      <td [routerLink]="['/Togglebar',customer.id]" style="cursor: pointer;color: rgb(61, 61, 180);">
+          {{customer.firstName}}</td>
+      <td>{{customer.lastName}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.city}}</td>
+      <!-- <td >{{customer.state.name}}</td> -->
+      <td>{{customer.cost|number}}</td>
+      <td [routerLink]="['/Togglebar1',customer.id]" style="cursor: pointer;color: rgb(61, 61, 180);">view orders
+      </td>
+
+  </tr>
+ 
+</tbody>
+
+</table>
