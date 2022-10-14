@@ -3,6 +3,7 @@ import jspdf from 'jspdf';
 import { HttpserviceService } from '../httpservice.service';
 import { NgxPrintModule } from 'ngx-print';
 import autoTable from 'jspdf-autotable';
+import * as XLSX from'xlsx';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -35,5 +36,17 @@ export class UserComponent implements OnInit {
     //     pdf.save('hello.pdf')
     //   }
     // })
+}
+filename='data.xlsx';
+exceldata(){
+  let elemetnt=document.getElementById('input');
+  //pass the table id 
+const ws:XLSX.WorkSheet=XLSX.utils.table_to_sheet(elemetnt);
+//generate the worwkbook and add workasheet
+const wb:XLSX.WorkBook=XLSX.utils.book_new();
+XLSX.utils.book_append_sheet(wb,ws,'sheet1');
+//save to file
+XLSX.writeFile(wb,this.filename)
+
 }
 }

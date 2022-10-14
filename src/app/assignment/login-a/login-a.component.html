@@ -34,9 +34,22 @@
                   <div class="invalid-feedback form-error" *ngIf="form.touched&&form.invalid">
                     enter valid email & password
                   </div>
-                  <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block" type="submit" [disabled]="form.invalid">Login</button>
-                  </div>
+                  <div class="row" style="margin-left: 20px;">
+                    <div class="col-md-6 mb-3 d-flex align-items-center">
+                      <span style="color: blue;font-size: 16px;">forgot password ?</span>
+                     
+                      
+                    </div>
+                    <div class="col-md-6 mb-3 d-flex align-items-center">
+
+                      <button class="btn btn-dark btn-lg btn-block" type="submit" [disabled]="form.invalid" style="width: 200px;">Login</button>
+                    </div>
+                    <div >
+                      <span  style="color: blue;font-size: 16px;">sign in </span>
+                    </div>
+                 
+                </div>
+                
                 </form>
               </div>
             </div>

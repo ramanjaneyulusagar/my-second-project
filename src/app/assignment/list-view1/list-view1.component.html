@@ -1,13 +1,18 @@
 <app-header1></app-header1>
-<b style="float: right;margin-bottom: 5px;"><label class="button1"
+
+<nav class="navbar">
+
+</nav>
+<b style="margin-bottom: 5px;float: right;"><label class="button1"
         style="font-weight:lighter;margin-left: 20px;margin-right: 1px;">Filter
         :</label>
     <input type="text" placeholder="search by" [(ngModel)]="sear"
         style="margin-right: 20px;border:solid 1px black;border-radius:2;border-radius: 5px;" />
 </b>
 
-<div style="margin: 20px;">
-    <table class="table table-striped " style="height:auto;">
+<div class="container-fluid" style="overflow-x: auto;">
+
+    <table class="table table-striped ">
         <thead>
             <tr>
                 <th></th>
@@ -52,6 +57,10 @@
         </tbody>
 
     </table>
+</div>
+
+<div style="margin: 20px;">
+
 
     <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
 </div>

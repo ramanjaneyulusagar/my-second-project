@@ -2,7 +2,7 @@
 
 <div>
 
-  <div style="margin: 20px;">
+  <div style="margin: 20px;overflow-x: auto;">
 
     <google-map height="400px" width="700px" [center]="center" [zoom]="zoom" (mapClick)="moveMap($event)"
       (mapMousemove)="move($event)" (mapClick)="addMarker($event)">
