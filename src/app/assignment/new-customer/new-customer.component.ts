@@ -10,7 +10,7 @@ import { customer } from '../customerdata1';
 })
 export class NewCustomerComponent implements OnInit {
   constructor(private fb: FormBuilder,
-    private router: Router,
+    private route: Router,
     private httpservice: HttpserviceService) {
   }
   formdata: customer = {
@@ -31,7 +31,8 @@ export class NewCustomerComponent implements OnInit {
       this.httpservice.createdata(this.formdata)
         .subscribe((data) => {
           alert('new customer is added successfully')
-          this.router.navigate(['ListView1'])
+          //this.router.navigate(['/'])
+          this.route.navigate(['/Header1','ListView1'])
         })
     }
     else { return }

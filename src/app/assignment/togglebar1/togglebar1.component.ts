@@ -55,14 +55,17 @@ export class Togglebar1Component implements OnInit {
     this.httpservice.update(this.formdata).subscribe({
       next: (data) => {
         alert("data updated")
-        this.route.navigate(['ListView1'])
+        //this.route.navigate(['/'])
+         this.route.navigate(['/Header1','ListView1'])
       }
 
     })
   }
   deleted() {
     this.httpservice.delete(this.formdata).subscribe(data => {
-      this.route.navigate(['ListView1'])
+      alert('data deleted sucessfully');
+     // this.route.navigate(['/'])
+      this.route.navigate(['/Header1','ListView1'])
     })
   }
 }

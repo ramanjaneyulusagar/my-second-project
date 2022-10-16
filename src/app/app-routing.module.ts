@@ -21,25 +21,36 @@ import { UserComponent } from './assignment/user/user.component';
 import { UserlistComponent } from './assignment/userlist/userlist.component';
 const routes: Routes = [
   //{ path: '', redirectTo: 'CardView1', pathMatch: 'full' },
-  { path: '', redirectTo: '/LoginA', pathMatch: 'full' },
-  { path: 'Header1 ', component: Header1Component, canActivate: [AuthguardGuard] },
+  //  { path: '', component: CardView1Component, canActivate: [AuthguardGuard] },
+  //{ path: 'login', component: LoginAComponent },
+  //{ path: '**', redirectTo: ''}
+  //{ path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', component: LoginAComponent },
+  {
+    path: 'Header1', component: Header1Component, canActivate: [AuthguardGuard], children: [
+      { path: 'ListView1', component: ListView1Component },
+      { path: 'CardView1', component: CardView1Component,},
+      { path: 'MapView', component: MapViewComponent, },
+      { path: 'NewCustomer', component: NewCustomerComponent,},
+    ]
+  },
   { path: 'Assignment1', component: Assignment1Component, canActivate: [AuthguardGuard] },
   { path: 'Employeedata', component: EmployeedataComponent, canActivate: [AuthguardGuard] },
-  { path: 'CardView1', component: CardView1Component, canActivate: [AuthguardGuard] },
-  { path: 'MapView', component: MapViewComponent, canActivate: [AuthguardGuard] },
+
+
   { path: 'AboutA', component: AboutAComponent, canActivate: [AuthguardGuard] },
-  { path: 'LoginA', component: LoginAComponent },
   { path: 'Header', component: HeaderComponent, canActivate: [AuthguardGuard] },
-  { path: 'ListView1', component: ListView1Component, canActivate: [AuthguardGuard] },
+
   { path: 'Togglebar/:detail', component: TogglebarComponent, canActivate: [AuthguardGuard] },
   { path: 'Togglebar1/:order', component: Togglebar1Component, canActivate: [AuthguardGuard] },
-  { path: 'NewCustomer', component: NewCustomerComponent, canActivate: [AuthguardGuard] },
+
   { path: 'CustomerOrders', component: CustomerOrdersComponent, canActivate: [AuthguardGuard] },
   { path: 'Togglebar2/:card', component: Togglebar2Component, canActivate: [AuthguardGuard] },
   { path: 'searchuser', component: SearchComponent },
   { path: 'user', component: UserComponent },
   { path: 'userlist', component: UserlistComponent },
-  { path: '**', redirectTo: 'CardView1', pathMatch: 'full' }
+  { path: '**', redirectTo: 'Header1/ListView1', pathMatch: 'full' },
+  //{path:'',redirectTo:'CardView1',pathMatch:'full'}
 ];
 
 

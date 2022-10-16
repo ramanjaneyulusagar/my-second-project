@@ -1,15 +1,9 @@
-<app-header1></app-header1>
-
-<nav class="navbar">
-
-</nav>
 <b style="margin-bottom: 5px;float: right;"><label class="button1"
         style="font-weight:lighter;margin-left: 20px;margin-right: 1px;">Filter
         :</label>
     <input type="text" placeholder="search by" [(ngModel)]="sear"
         style="margin-right: 20px;border:solid 1px black;border-radius:2;border-radius: 5px;" />
 </b>
-
 <div class="container-fluid" style="overflow-x: auto;">
 
     <table class="table table-striped ">
@@ -39,9 +33,6 @@
                     <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="60px"
                         style="float: left;padding-right: 10px" />
                 </td>
-
-
-
                 <td (click)="routeToCustomerDetails(customer.id)" style="cursor: pointer;color: rgb(61, 61, 180);">
                     {{customer.firstName}}</td>
                 <td>{{customer.lastName}}</td>
@@ -60,7 +51,5 @@
 </div>
 
 <div style="margin: 20px;">
-
-
     <pagination-controls (pageChange)="p = $event" class="float-right" style="float: left;"></pagination-controls>
 </div>

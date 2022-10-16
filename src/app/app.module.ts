@@ -43,6 +43,8 @@ import { SearchComponent } from './assignment/search/search.component';
 import { UserlistComponent } from './assignment/userlist/userlist.component';
 import { UserComponent } from './assignment/user/user.component';
 import { Filter1Pipe } from './assignment/filter1.pipe';
+import { MaterialModule } from './material/material.module';
+import { LoginComponent } from './assignment/login/login.component';
 //import{ filesaver} from 'ngx-filesaver'
 
 
@@ -70,6 +72,7 @@ import { Filter1Pipe } from './assignment/filter1.pipe';
     UserlistComponent,
     UserComponent,
     Filter1Pipe,
+    LoginComponent,
   ],
 
   imports: [
@@ -78,7 +81,7 @@ import { Filter1Pipe } from './assignment/filter1.pipe';
     AppRoutingModule,
     FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule, MatFormFieldModule, MatCommonModule
     // MatSliderModule
-    ,NgxPrintModule
+    ,NgxPrintModule,MaterialModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

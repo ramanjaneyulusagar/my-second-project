@@ -4,12 +4,14 @@ import { Router } from '@angular/router';
 import data from '/src/assets/customerdetails/customers.json';
 import { AuthserviceService } from 'src/app/assignment/authservice.service';
 import { customer } from '../customerdata1';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-login-a',
   templateUrl: './login-a.component.html',
   styleUrls: ['./login-a.component.css']
 })
 export class LoginAComponent implements OnInit {
+  isLoggedIn$!: Observable<boolean>;
   isSubmitted: boolean = false;
   isValidUser: boolean = false;
   form: FormGroup = new FormGroup({});  
@@ -17,7 +19,7 @@ export class LoginAComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthserviceService) { }
 
   ngOnInit() {
-    
+    this.isLoggedIn$ = this.authService.isLoggedIn;
     this.form = this.fb.group({
       
       email: new FormControl('',Validators.compose([
@@ -35,12 +37,14 @@ export class LoginAComponent implements OnInit {
   onSubmit() :void{
     if(this.form.value.email !=''&& this.form.value.password !=''){
       if(this.authService.login(this.form.value.email,this.form.value.password)){
-        this.router.navigate(['/ListView1'] ) ; 
+        this.router.navigate(['/Header1','ListView1'] ) ; 
 
       }
       else
       {
+       alert('wrong password')
         this.isSubmitted = true;
+        
       }
     }
       // this.authService

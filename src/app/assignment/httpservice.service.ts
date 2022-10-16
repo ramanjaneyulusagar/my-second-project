@@ -37,18 +37,19 @@ export class HttpserviceService {
   delete(data: customer) {
     return this.http.delete<customer>(`http://localhost:3000/customerdata/${data.id}`)
   }
-  create(data: User) {
-    return this.http.post<User>("http://localhost:3000/profile", data)
-  }
-  create1() {
-    return this.http.get<User>("http://localhost:3000/profile")
-  }
   createdata(data: customer) {
     return this.http.post<customer>("http://localhost:3000/customerdata", data)
   }
   getbyid(id: any) {
     return this.http.get<customer>(`http://localhost:3000/customerdata/${id}`)
   }
+  create(data: User) {
+    return this.http.post<User>("http://localhost:3000/profile", data)
+  }
+  create1() {
+    return this.http.get<User>("http://localhost:3000/profile")
+  }
+
   getfilterdata(val: any) {
     return this.http.get(`http://localhost:3000/customerdata/${val}`)
 

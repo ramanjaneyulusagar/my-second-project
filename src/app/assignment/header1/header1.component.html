@@ -5,7 +5,7 @@
   <fa-icon [icon]="faUser" style="font-size: 20px;margin-left: 40px;"></fa-icon>
   <span class="ics"> Customers</span>
 </div>
-<nav class="navbar navbar-expand-lg navbar ">
+<nav class="navbar navbar-expand-lg navbar-light ">
   <div class="container-fluid ">
 
     <div class="collapse navbar-collapse " id="navbarSupportedContent1">
@@ -13,27 +13,27 @@
         <li>
 
 
-          <a class="view" routerLinkActive="active" routerLink="/ListView1">
+          <a class="view" routerLinkActive="active" [routerLink]="['/Header1','ListView1']">
             <fa-icon class="ficon" [icon]="faList" routerLinkActive="active"></fa-icon>ListView
           </a>
         </li>
         <li>
 
-          <a class="view" routerLinkActive="active" routerLink="/CardView1">
+          <a class="view" routerLinkActive="active"   [routerLink]="['/Header1','CardView1']">
             <fa-icon class="ficon" [icon]="faIdCard" routerLinkActive="active">
             </fa-icon>CardView
           </a>
         </li>
         <li>
 
-          <a class="view" routerLinkActive="active" routerLink="/MapView">
+          <a class="view" routerLinkActive="active" [routerLink]="['/Header1','MapView']">
             <fa-icon class="ficon" [icon]="faMapLocationDot" routerLinkActive="active">
             </fa-icon>MapView
           </a>
         </li>
         <li>
 
-          <a class="view" routerLinkActive="active" routerLink="/NewCustomer">
+          <a class="view" routerLinkActive="active" [routerLink]="['/Header1','NewCustomer']">
             <fa-icon class="ficon" [icon]="faPlus" routerLinkActive="active">
             </fa-icon>NewCustomer
           </a>
@@ -46,3 +46,4 @@
     </a>
   </div>
 </nav>
+<router-outlet></router-outlet>

@@ -1,4 +1,3 @@
-<app-header1></app-header1>
 <b class="filter">
   <label class="button1">Filter </label>
   <input type="text" placeholder="search" [(ngModel)]="sear" class="input1" />
@@ -12,8 +11,10 @@
             *ngFor="let customer of userdata|paginate: { itemsPerPage: 8, currentPage: p }|filter:sear;">
             <div class="box-body menu2">
               <div class="menu3">
-                <span class="span1">{{customer.firstName|titlecase}} {{customer.lastName|titlecase}}</span>
-                <fa-icon [icon]="faPenToSquare" (click)="edit(customer.id)" ></fa-icon>
+                <span class="span1">
+                  {{customer.firstName|titlecase}} {{customer.lastName|titlecase}}
+                </span>
+                <fa-icon [icon]="faPenToSquare" (click)="edit(customer.id)"></fa-icon>
               </div>
               <div class="col-sm-12 menu4">
                 <div style="margin:8px;">
@@ -21,11 +22,17 @@
                   <img *ngIf="customer.gender==='female'" src="./assets/images/female.png" width="80px" />
                 </div>
                 <div>
-                  <span>{{customer.city}}</span>
+                  <span>
+                    {{customer.city}}
+                  </span>
                   <br />
-                  <span>{{customer.state.name}}</span>
+                  <span>
+                    {{customer.state.name}}
+                  </span>
                   <br />
-                  <span class="span2" (click)="routeToViewOrder(customer.id)">ViewOrders</span>
+                  <span class="span2" (click)="routeToViewOrder(customer.id)">
+                    ViewOrders
+                  </span>
                   <br />
                 </div>
                 <br />
