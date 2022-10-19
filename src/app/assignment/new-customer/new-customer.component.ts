@@ -30,7 +30,7 @@ export class NewCustomerComponent implements OnInit {
     if (formdata) {
       this.httpservice.createdata(this.formdata)
         .subscribe((data) => {
-          alert('new customer is added successfully')
+         // alert('new customer is added successfully')
           //this.router.navigate(['/'])
           this.route.navigate(['/Header1','ListView1'])
         })

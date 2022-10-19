@@ -45,8 +45,9 @@ import { UserComponent } from './assignment/user/user.component';
 import { Filter1Pipe } from './assignment/filter1.pipe';
 import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './assignment/login/login.component';
+//import { AngularFileUploaderModule } from "angular-file-uploader";
 //import{ filesaver} from 'ngx-filesaver'
-
+//
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { LoginComponent } from './assignment/login/login.component';
     UserComponent,
     Filter1Pipe,
     LoginComponent,
+    
   ],
 
   imports: [
@@ -81,7 +83,7 @@ import { LoginComponent } from './assignment/login/login.component';
     AppRoutingModule,
     FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule, MatFormFieldModule, MatCommonModule
     // MatSliderModule
-    ,NgxPrintModule,MaterialModule
+    ,NgxPrintModule,MaterialModule,
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

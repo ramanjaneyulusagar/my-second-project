@@ -2,7 +2,7 @@
   <label class="button1">Filter </label>
   <input type="text" placeholder="search" [(ngModel)]="sear" class="input1" />
 </b><br /><br />
-<div class="row menu" style="overflow-y: auto;">
+<div class="row menu">
   <div class="col-md-12">
     <div class="x_panel">
       <div class="x_content">
@@ -45,4 +45,9 @@
   </div>
 </div>
 <pagination-controls (pageChange)="p=($event)" class="float-right" style="float: left;"></pagination-controls>
+
+
+<button (click)="export()">export </button>
+
+
 <!-- [routerLink]="['/Togglebar2',customer.id]" -->

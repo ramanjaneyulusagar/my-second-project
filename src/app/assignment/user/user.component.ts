@@ -23,6 +23,7 @@ export class UserComponent implements OnInit {
     console.log(val);
     this.users = [];
     this.httpservice.getfilterdata(val).subscribe((data:any)=>{
+      
       this.users.push(data);
     console.log(data)
     });

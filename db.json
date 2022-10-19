@@ -1,31 +1,6 @@
 {
   "customerdata": [
     {
-      "id": 1,
-      "firstName": "ted",
-      "lastName": "james",
-      "gender": "male",
-      "address": "1234 Anywhere St.",
-      "city": " Phoenix ",
-      "state": {
-        "abbreviation": "AZ",
-        "name": "Arizona"
-      },
-      "orders": [
-        {
-          "productName": "Basketball",
-          "itemCost": 7.99
-        },
-        {
-          "productName": "Shoes",
-          "itemCost": 199.99
-        }
-      ],
-      "latitude": 33.299,
-      "longitude": -111.963,
-      "cost": 207.98000000000002
-    },
-    {
       "id": 2,
       "firstName": "Michelle",
       "lastName": "Thompson",
@@ -444,6 +419,42 @@
       },
       "latitude": -22.919369,
       "longitude": -43.181836
+    },
+    {
+      "firstName": "nikshith",
+      "lastName": "ushakoyala",
+      "gender": "male",
+      "address": "nizambad,erajpalle",
+      "city": "Hyderabad",
+      "state": {
+        "name": "telangana",
+        "abbreviation": "ts"
+      },
+      "id": 23
+    },
+    {
+      "firstName": "nikshith",
+      "lastName": "ushakoyala",
+      "gender": "male",
+      "address": "nizambad,erajpalle",
+      "city": "htd",
+      "state": {
+        "name": "telangana",
+        "abbreviation": "ts"
+      },
+      "id": 24
+    },
+    {
+      "firstName": "nikshith",
+      "lastName": "ushakoyala",
+      "gender": "male",
+      "address": "nizambad,erajpalle",
+      "city": "Hyderabad",
+      "state": {
+        "name": "telangana",
+        "abbreviation": "ts"
+      },
+      "id": 25
     }
   ],
   "comments": [
