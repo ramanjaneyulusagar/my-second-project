@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@anderstornkvist/angular-file-uploader": "^5.0.3-alpha",
     "@angular/animations": "^14.2.6",
     "@angular/cdk": "^14.1.3",
     "@angular/common": "^14.2.6",

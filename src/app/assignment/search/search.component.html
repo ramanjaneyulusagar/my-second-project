@@ -55,4 +55,21 @@
 
 </form><br/>
 
+<!-- 
+<angular-file-uploader
+      [config]="afuConfig">
+</angular-file-uploader> -->
 
+
+<!-- <angular-file-uploader 
+      [config]="afuConfig"
+    
+      (ApiResponse)="DocUpload($event)">
+</angular-file-uploader> -->
+<angular-file-uploader
+      [config]="afuConfig">
+</angular-file-uploader>
+
+<input type="text" (change)="getname(name.value)" #name />
+<input  type="file" (change)="getfile($event)" />
+<input type="button" value="upload file" (click)="submit()" />

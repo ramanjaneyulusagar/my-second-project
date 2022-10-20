@@ -45,7 +45,7 @@ import { UserComponent } from './assignment/user/user.component';
 import { Filter1Pipe } from './assignment/filter1.pipe';
 import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './assignment/login/login.component';
-//import { AngularFileUploaderModule } from "angular-file-uploader";
+import { AngularFileUploaderModule } from '@anderstornkvist/angular-file-uploader';
 //import{ filesaver} from 'ngx-filesaver'
 //
 
@@ -78,7 +78,7 @@ import { LoginComponent } from './assignment/login/login.component';
   ],
 
   imports: [
-    BrowserModule,
+    BrowserModule,AngularFileUploaderModule,
     NgbModule, HttpClientModule, NgxPaginationModule, GoogleMapsModule,
     AppRoutingModule,
     FontAwesomeModule, ReactiveFormsModule, FormsModule, RouterModule, BrowserAnimationsModule, MatFormFieldModule, MatCommonModule

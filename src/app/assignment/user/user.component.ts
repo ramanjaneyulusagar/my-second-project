@@ -4,6 +4,7 @@ import { HttpserviceService } from '../httpservice.service';
 import { NgxPrintModule } from 'ngx-print';
 import autoTable from 'jspdf-autotable';
 import * as XLSX from'xlsx';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
