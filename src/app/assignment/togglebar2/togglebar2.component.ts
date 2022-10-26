@@ -29,10 +29,10 @@ export class Togglebar2Component implements OnInit {
     city: '',
     state: { name: '', abbreviation: '' }
   }
-  active = 3
-  id: any;
-  data!: ListView1Component;
-  names: any
+  public active = 3
+  public id: any;
+  public data!: ListView1Component;
+  public names: any
   constructor(private router: ActivatedRoute, private httpservice: HttpserviceService, private route: Router) { }
 
   ngOnInit(): void {
@@ -53,18 +53,14 @@ export class Togglebar2Component implements OnInit {
     console.log(this.formdata);
     this.httpservice.update(this.formdata).subscribe({
       next: (data) => {
-        //alert("data updated")
-        this.route.navigate(['/Header1','ListView1'])
-        //this.route.navigate(['ListView1'])
+        this.route.navigate(['/Header1', 'ListView1'])
       }
 
     })
   }
   deleted() {
     this.httpservice.delete(this.formdata).subscribe(data => {
-      //alert('deleted')
-      this.route.navigate(['/Header1','ListView1'])
-      //this.route.navigate(['ListView1'])
+      this.route.navigate(['/Header1', 'ListView1'])
 
     })
   }

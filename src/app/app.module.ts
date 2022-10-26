@@ -3,10 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpInterceptor } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { Angular1Component } from './angular1/angular1.component';
 import { EmployeedataComponent } from './employeedata/employeedata.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Assignment1Component } from './assignment1/assignment1.component';
 import { FormBuilder } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
@@ -39,22 +37,14 @@ import * as xlsx from 'xlsx';
 import { Filter2Pipe } from './assignment/filter2.pipe'
 import jspdf from 'jspdf'
 import { NgxPrintModule } from 'ngx-print';
-import { SearchComponent } from './assignment/search/search.component';
-import { UserlistComponent } from './assignment/userlist/userlist.component';
-import { UserComponent } from './assignment/user/user.component';
 import { Filter1Pipe } from './assignment/filter1.pipe';
 import { MaterialModule } from './material/material.module';
-import { LoginComponent } from './assignment/login/login.component';
 import { AngularFileUploaderModule } from '@anderstornkvist/angular-file-uploader';
-//import{ filesaver} from 'ngx-filesaver'
-//
 
 @NgModule({
   declarations: [
     AppComponent,
-    Angular1Component,
     EmployeedataComponent,
-    Assignment1Component,
     AboutAComponent,
     LoginAComponent,
     FilterPipe,
@@ -69,11 +59,8 @@ import { AngularFileUploaderModule } from '@anderstornkvist/angular-file-uploade
     CustomerOrdersComponent,
     Togglebar2Component,
     Filter2Pipe,
-    SearchComponent,
-    UserlistComponent,
-    UserComponent,
     Filter1Pipe,
-    LoginComponent,
+ 
     
   ],
 

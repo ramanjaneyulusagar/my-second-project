@@ -20,12 +20,12 @@ export class CustomerOrdersComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCustomerData();
   }
-  public expo:any
+  public expo: any
   getAllCustomerData() {
 
-    this.httpservice.getAllCustomerData().subscribe((response:any) => {
+    this.httpservice.getAllCustomerData().subscribe((response: any) => {
       this.userdata = response;
-      this.expo=response.orders
+      this.expo = response.orders
       this.userdata.map((c: any) => {
         c['cost'] = 0.0
         if (c?.orders) {

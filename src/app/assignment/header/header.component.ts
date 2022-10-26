@@ -14,14 +14,13 @@ export class HeaderComponent implements OnInit {
   faPenToSquare = faPenToSquare;
   faPeopleGroup = faPeopleGroup;
   faUser = faUser;
-  f: string = '';
-  sear: string = '';
-  login = true;
-  //isLoggedIn$!: Observable<boolean>;
+  public f: string = '';
+  public sear: string = '';
+  public login = true;
+
   constructor(private router: Router,
     private authservice: AuthserviceService) { }
   ngOnInit() {
-   // this.isLoggedIn$ = this.authservice.isLoggedIn;
   }
   onLogout() {
     this.authservice.logoutUser();

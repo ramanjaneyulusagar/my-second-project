@@ -9,10 +9,10 @@ import { HttpserviceService } from '../httpservice.service';
 })
 export class ListView1Component implements OnInit {
   constructor(private http: HttpClient, private route: Router, private httpservice: HttpserviceService, private router: Router) { };
-  userdata: any
-  sear: string = '';
-  p: number = 1;
-  total: number = 0;
+  public userdata: any
+  public sear: string = '';
+  public p: number = 1;
+  public total: number = 0;
   ngOnInit(): void {
     this.getAllCustomerData();
   }

@@ -17,14 +17,15 @@ interface User {
 @Component({
   selector: 'app-about-a',
   templateUrl: './about-a.component.html',
-  styleUrls: ['./about-a.component.css']
+  styleUrls: []
 })
 export class AboutAComponent implements OnInit {
   faFilm = faFilm;
   faPenToSquare = faPenToSquare;
   faPeopleGroup = faPeopleGroup;
   faUser = faUser;
-  constructor(private http: HttpClient, private route: Router, private httpservice: HttpserviceService) { }
+  constructor(private http: HttpClient, private route: Router,
+    private httpservice: HttpserviceService) { }
 
   ngOnInit(): void {
 

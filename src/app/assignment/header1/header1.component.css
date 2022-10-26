@@ -29,7 +29,7 @@ a {
 .view {
   color: #919191;
   font-size: 16px;
-  font-weight:500;
+  font-weight: 500;
 }
 
 img,
@@ -43,14 +43,16 @@ a {
   margin-left: 10px;
   font-weight: 400;
 }
-a:hover{
 
-  text-shadow: #111211 1px 0px 0px  ;
+a:hover {
+
+  text-shadow: #111211 1px 0px 0px;
 }
-.image:hover{
- 
+
+.image:hover {
+
   background-color: #d8dadc;
   border-radius: 18px;
-  border: solid  #000000 1px ;
-  
-  }
+  border: solid #000000 1px;
+
+}

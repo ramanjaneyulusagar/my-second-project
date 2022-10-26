@@ -16,12 +16,6 @@ export class AuthserviceService {
 
     return this.loggedIn.asObservable();
   }
-  loginUser(user: loginUser) {
-    if (user.email !== '' && user.password !== '') {
-      this.loggedIn.next(true);
-      this.route.navigate(['/']);
-    }
-  } 
   logoutUser() {
     this.loggedIn.next(false);
     this.route.navigate(['/login']);

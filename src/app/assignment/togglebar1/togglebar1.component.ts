@@ -24,12 +24,12 @@ export class Togglebar1Component implements OnInit {
     city: '',
     state: { name: '', abbreviation: '' }
   }
-  active = 2
-  id: any;
+  public active = 2
+  public id: any;
   constructor(private router: ActivatedRoute, private httpservice: HttpserviceService, private route: Router) { }
   @ViewChild(ListView1Component)
-  data!: ListView1Component;
-  names: any
+  public data!: ListView1Component;
+  public names: any
   ngOnInit(): void {
     this.router.paramMap.subscribe((param) => {
       var id = Number(param.get('order')); this.getbyid(id); this.names = this.data;
@@ -54,18 +54,14 @@ export class Togglebar1Component implements OnInit {
     console.log(this.formdata);
     this.httpservice.update(this.formdata).subscribe({
       next: (data) => {
-        //alert("data updated")
-        //this.route.navigate(['/'])
-         this.route.navigate(['/Header1','ListView1'])
+        this.route.navigate(['/Header1', 'ListView1'])
       }
 
     })
   }
   deleted() {
     this.httpservice.delete(this.formdata).subscribe(data => {
-      //alert('data deleted sucessfully');
-     // this.route.navigate(['/'])
-      this.route.navigate(['/Header1','ListView1'])
+      this.route.navigate(['/Header1', 'ListView1'])
     })
   }
 }

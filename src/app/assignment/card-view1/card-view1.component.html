@@ -5,12 +5,12 @@
 <div class="row menu">
   <div class="col-md-12">
     <div class="x_panel">
-      <div class="x_content">
-        <div class="row">
-          <div class=" menu1"
+      <div class="x_content" >
+        <div class="row" >
+          <div class=" menu1" 
             *ngFor="let customer of userdata|paginate: { itemsPerPage: 8, currentPage: p }|filter:sear;">
-            <div class="box-body menu2">
-              <div class="menu3">
+            <div class="box-body menu2" >
+              <div class="menu3" >
                 <span class="span1">
                   {{customer.firstName|titlecase}} {{customer.lastName|titlecase}}
                 </span>
@@ -45,9 +45,3 @@
   </div>
 </div>
 <pagination-controls (pageChange)="p=($event)" class="float-right" style="float: left;"></pagination-controls>
-
-
-<button (click)="export()">export </button>
-
-
-<!-- [routerLink]="['/Togglebar2',customer.id]" -->

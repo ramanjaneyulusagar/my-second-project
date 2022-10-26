@@ -12,18 +12,9 @@ export class AuthguardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(localStorage.getItem('currentuser')){
-        return true
+        return true;
       }
-      //alert('enter corect details')
-      //this.router.navigate(['']);
-      return false
-      // if (this.authService.isAuthenticate) {
-      //   return true;
-      // } else {
-        
-      //   return false;
-      // }
-  
+      return false;
   }
     
 }

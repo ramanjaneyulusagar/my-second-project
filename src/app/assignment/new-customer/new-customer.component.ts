@@ -21,17 +21,15 @@ export class NewCustomerComponent implements OnInit {
     city: '',
     state: { name: '', abbreviation: '' }
   }
-  submitted = false;
-  user: customer[] = [];
-  users: customer[] = [];
+  public submitted = false;
+  public user: customer[] = [];
+  public users: customer[] = [];
   ngOnInit(): void {
   }
   createdata(formdata: any) {
     if (formdata) {
       this.httpservice.createdata(this.formdata)
         .subscribe((data) => {
-         // alert('new customer is added successfully')
-          //this.router.navigate(['/'])
           this.route.navigate(['/Header1','ListView1'])
         })
     }
